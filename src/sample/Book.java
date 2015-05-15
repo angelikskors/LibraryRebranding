@@ -2,24 +2,63 @@ package sample;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.image.Image;
 
 public class Book {
+
+    private Image image;
+    private String commentary;
     private SimpleStringProperty name=new SimpleStringProperty("");
     private SimpleStringProperty author=new SimpleStringProperty("");
     private SimpleStringProperty genre=new SimpleStringProperty("");
     private SimpleIntegerProperty year=new SimpleIntegerProperty();
+    private  SimpleIntegerProperty page=new SimpleIntegerProperty();
     private SimpleStringProperty description=new SimpleStringProperty("");
-
-    public Book(String genre, String name, String author, int year) {
+    private SimpleIntegerProperty popularity=new SimpleIntegerProperty();
+    public Book(String genre, String name, String author, int year,int page,String commentary) {
         setGenre(genre);
         setName(name);
         setAuthor(author);
         setYear(year);
+        setPage(page);
+        setCommentary(commentary);
     }
 
-    public Book(String genre, String name, String author, int year,String description) {
-        this(genre,name,author,year);
-       setDescription( description);
+    public int getPage() {
+        return page.get();
+    }
+
+    public SimpleIntegerProperty pageProperty() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page.set(page);
+    }
+
+    public String getCommentary() {
+        return commentary;
+    }
+
+    public void setCommentary(String commentary) {
+        this.commentary = commentary;
+    }
+
+    public Book(String genre, String name, String author, int year,int page,String commentary,String description) {
+        this(genre, name, author, year,page,commentary);
+       setDescription(description);
+    }
+    public Book(String genre, String name, String author, int year,int page,String commentary,String description, Image image){
+        this(genre, name, author, year,page,commentary,description);
+        setImage(image);
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public String getName() {
@@ -53,6 +92,13 @@ public class Book {
     public void setYear(int year) {
         this.year.set(year);
     }
+    public int getPopularity() {
+        return popularity.get();
+    }
+
+    public void setPopularity(int popularity) {
+        this.popularity.set(popularity);
+    }
 
     public String getDescription() {
         return description.get();
@@ -78,6 +124,10 @@ public class Book {
     }
     public SimpleStringProperty descriptionProperty() {
         return description;
+    }
+    public SimpleIntegerProperty popularityProperty() {
+
+        return popularity;
     }
 
 

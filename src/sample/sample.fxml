@@ -48,6 +48,15 @@
         </HBox>
         <HBox spacing="6">
             <children>
+                <Label text="Pages"/>
+                <TextField fx:id="page"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
                 <Label text="Description"/>
                 <TextArea fx:id="description"/>
             </children>

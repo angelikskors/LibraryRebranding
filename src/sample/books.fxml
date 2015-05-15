@@ -1,0 +1,36 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox fx:controller="sample.BaseController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <children>
+        <TableView fx:id="booksView">
+            <columns> <TableColumn text="Last Name">
+                <HBox spacing="6"><children>
+                <TextField fx:id="name" promptText="First Name"
+                                prefWidth="90"/></children>
+                </HBox>
+              <cellValueFactory>
+
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <HBox spacing="6">
+            <children>
+                <Button text="Create" onAction="#handleCreateAction"/>
+                <Button text="Update" onAction="#handleUpdateAction"/>
+                <Button text="Remove" onAction="#handleDeleteAction"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+</VBox>
