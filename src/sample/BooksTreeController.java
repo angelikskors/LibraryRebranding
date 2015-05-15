@@ -7,14 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 import java.net.URL;
-import java.util.ArrayList;
+
 import java.util.ResourceBundle;
 
 public class BooksTreeController  implements Initializable{
@@ -28,10 +26,10 @@ public class BooksTreeController  implements Initializable{
     private TreeTableColumn<Book, String> name;
 
     @FXML
-    private VBox details;
+    private VBox detailedInformation;
 
     @FXML
-    private IncludeExampleDetailController detailsController;
+    private BooksDetailController detailsController;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -71,8 +69,7 @@ public class BooksTreeController  implements Initializable{
 
         treeTableView.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue)
-
-                        ->
+       ->
 
                 {
                     Book book = null;

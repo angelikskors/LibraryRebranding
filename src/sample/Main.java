@@ -22,12 +22,12 @@ public class Main extends Application {
 //        primaryStage.show();
                 FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(
-                Main.class.getResource("IncludeExampleTree.fxml"));
+                Main.class.getResource("BookTree.fxml"));
 
 
          BorderPane borderPane = fxmlLoader.load();
         Scene scene = new Scene(borderPane, 600, 500);
-        primaryStage.setTitle("Include Example");
+        primaryStage.setTitle("Book Base");
         primaryStage.setScene(scene);
         primaryStage.show();}
         public static void main(String[] args) {

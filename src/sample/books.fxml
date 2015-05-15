@@ -3,15 +3,21 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
 <VBox fx:controller="sample.BaseController"
       xmlns:fx="http://javafx.com/fxml" alignment="center">
     <children>
-        <TableView fx:id="booksView">
-            <columns> <TableColumn text="Last Name">
-                <HBox spacing="6"><children>
+       <HBox spacing="6">
+
+               <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" >
+
+               </ImageView>
+
                 <TextField fx:id="name" promptText="First Name"
                                 prefWidth="90"/></children>
                 </HBox>
+        <TableView fx:id="booksView"><columns>
+            <TableColumn text="Last Name">
               <cellValueFactory>
 
                         <PropertyValueFactory property="lastName"/>
