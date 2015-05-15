@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class LibrarySurfaceController implements Initializable{
+public class BookAddSurfaceController implements Initializable{
     @FXML
     private TextField name;
     @FXML
