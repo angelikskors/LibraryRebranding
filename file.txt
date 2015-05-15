@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Шинель - Гоголь Николай :: Режим чтения</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="keywords" content="Шинель - Гоголь Николай :: Режим чтения, скачать книги, бесплатная электронная библиотека, royallib.com, royallib.ru, рояллиб, скачать без регистрации, бесплатно, fb2, doc, rtf, html, txt">
+    <meta name="Description" CONTENT="Шинель - Гоголь Николай :: Режим чтения :: Электронная библиотека royallib.com">
+    <meta name='yandex-verification' content='55fb0b14841008b8' />
+    <link rel="icon" href="http://royallib.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://royallib.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    
+
+<!--[if IE]>
+<style type="text/css">
+    body { width expression(document.body.clientWidth > 1003 ? "1003px" : "779px");  }
+</style>
+<![endif]-->
+    
+    <script language="javascript" charset="utf-8" src="http://royallib.com/js/h.js"></script>
+    <script language="javascript" charset="utf-8" src="http://royallib.com/js/fd.js"></script>
+
+    <script language="javascript" charset="utf-8" src="http://royallib.com/js/jscolor/jscolor.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://royallib.com/js/jquery.leanModal.min.js"></script>
+    <script type="text/javascript" src="http://royallib.com/js/password_strength_plugin.js"></script>
+    <script src="http://royallib.com/js/cropper.min.js"></script>
+    <script language="javascript" charset="utf-8" src="http://royallib.com/js/misc.js"></script>
+
+    
+    <script language="javascript">
+
+        $(document).ready( function() {
+
+            //BASIC
+            $(".password_test").passStrength({
+                userid: "#user_id"
+
+            });
+
+            $(".cropper").cropper({
+                aspectRatio: 1,
+                preview: ".extra-preview",
+                data: {x1: 10, y1: 10, width: 50, height: 50},
+                done: function(data) {
+                    var coords = data.x1 + ";" + data.y1 + ";" + data.height;
+                    $("#coords").val(coords);
+                }
+            });
+                        if ( window.location.hash == '#login' ) {
+                $("#modal_trigger").click();
+            }
+                    });
+    </script>
+
+    
+    <link href="http://royallib.com/css/index_css.css" type="text/css" rel="stylesheet" />
+    <link href="http://royallib.com/css/pwd_style.css" rel="stylesheet" type="text/css" />
+    <link href="http://royallib.com/css/login_popup.css" rel="stylesheet" type="text/css" />
+    <link  href="http://royallib.com/css/cropper.min.css" rel="stylesheet">
+
+
+
+</head>
+<body onload="javascript:processAjax();">
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+    new Image().src = "//counter.yadro.ru/hit?r"+
+            escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                    screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";"+Math.random();//--></script><!--/LiveInternet-->
+
+<!--Rating@Mail.ru counter-->
+<img src="http://d1.c5.bc.a1.top.mail.ru/counter?id=1855756"
+     border="0" height="1" width="1" />
+<!--// Rating@Mail.ru counter-->
+
+<div class="container">
+    <div class="container-in">
+        <!-- header -->
+        <div class="header">
+            <div class="hdr-top">
+                <a href="http://royallib.com" class="logo">Электронная библиотека RoyalLib.com</a>
+                                <ul class="account">
+                    <li><a id="modal_trigger" href="#modal" class="">Войти</a></li>
+                    <li><a href="http://royallib.com/users/registration" class="">Зарегистрироваться</a></li>
+                </ul>
+                            </div>
+
+            <div class="hdr-btm">
+                <ul class="sort">
+                    <li><span>По авторам:</span></li>
+                                            <li><a href="http://royallib.com/authors/ru/0/">А</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/1/">Б</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/2/">В</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/3/">Г</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/4/">Д</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/5/">Е</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/7/">Ж</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/8/">З</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/9/">И</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/10/">Й</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/11/">К</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/12/">Л</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/13/">М</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/14/">Н</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/15/">О</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/16/">П</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/17/">Р</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/18/">С</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/19/">Т</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/20/">У</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/21/">Ф</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/22/">Х</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/23/">Ц</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/24/">Ч</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/25/">Ш</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/26/">Щ</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/27/">Ы</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/28/">Э</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/29/">Ю</a></li>
+                                            <li><a href="http://royallib.com/authors/ru/30/">Я</a></li>
+                                        <li><a href="http://royallib.com/authors/en/0/">[A-Z]</a></li>
+                </ul>
+                <ul class="sort">
+                    <li><span>По книгам:</span></li>
+                                            <li><a href="http://royallib.com/books/ru/0/1/">А</a></li>
+                                            <li><a href="http://royallib.com/books/ru/1/1/">Б</a></li>
+                                            <li><a href="http://royallib.com/books/ru/2/1/">В</a></li>
+                                            <li><a href="http://royallib.com/books/ru/3/1/">Г</a></li>
+                                            <li><a href="http://royallib.com/books/ru/4/1/">Д</a></li>
+                                            <li><a href="http://royallib.com/books/ru/5/1/">Е</a></li>
+                                            <li><a href="http://royallib.com/books/ru/7/1/">Ж</a></li>
+                                            <li><a href="http://royallib.com/books/ru/8/1/">З</a></li>
+                                            <li><a href="http://royallib.com/books/ru/9/1/">И</a></li>
+                                            <li><a href="http://royallib.com/books/ru/10/1/">Й</a></li>
+                                            <li><a href="http://royallib.com/books/ru/11/1/">К</a></li>
+                                            <li><a href="http://royallib.com/books/ru/12/1/">Л</a></li>
+                                            <li><a href="http://royallib.com/books/ru/13/1/">М</a></li>
+                                            <li><a href="http://royallib.com/books/ru/14/1/">Н</a></li>
+                                            <li><a href="http://royallib.com/books/ru/15/1/">О</a></li>
+                                            <li><a href="http://royallib.com/books/ru/16/1/">П</a></li>
+                                            <li><a href="http://royallib.com/books/ru/17/1/">Р</a></li>
+                                            <li><a href="http://royallib.com/books/ru/18/1/">С</a></li>
+                                            <li><a href="http://royallib.com/books/ru/19/1/">Т</a></li>
+                                            <li><a href="http://royallib.com/books/ru/20/1/">У</a></li>
+                                            <li><a href="http://royallib.com/books/ru/21/1/">Ф</a></li>
+                                            <li><a href="http://royallib.com/books/ru/22/1/">Х</a></li>
+                                            <li><a href="http://royallib.com/books/ru/23/1/">Ц</a></li>
+                                            <li><a href="http://royallib.com/books/ru/24/1/">Ч</a></li>
+                                            <li><a href="http://royallib.com/books/ru/25/1/">Ш</a></li>
+                                            <li><a href="http://royallib.com/books/ru/26/1/">Щ</a></li>
+                                            <li><a href="http://royallib.com/books/ru/27/1/">Ы</a></li>
+                                            <li><a href="http://royallib.com/books/ru/28/1/">Э</a></li>
+                                            <li><a href="http://royallib.com/books/ru/29/1/">Ю</a></li>
+                                            <li><a href="http://royallib.com/books/ru/30/1/">Я</a></li>
+                                        <li><a href="http://royallib.com/books/en/0/0/">[A-Z]</a></li>
+                </ul>
+                <ul class="sort">
+                    <li><span>По сериям:</span></li>
+                                            <li><a href="http://royallib.com/series/ru/0/">А</a></li>
+                                            <li><a href="http://royallib.com/series/ru/1/">Б</a></li>
+                                            <li><a href="http://royallib.com/series/ru/2/">В</a></li>
+                                            <li><a href="http://royallib.com/series/ru/3/">Г</a></li>
+                                            <li><a href="http://royallib.com/series/ru/4/">Д</a></li>
+                                            <li><a href="http://royallib.com/series/ru/5/">Е</a></li>
+                                            <li><a href="http://royallib.com/series/ru/7/">Ж</a></li>
+                                            <li><a href="http://royallib.com/series/ru/8/">З</a></li>
+                                            <li><a href="http://royallib.com/series/ru/9/">И</a></li>
+                                            <li><a href="http://royallib.com/series/ru/10/">Й</a></li>
+                                            <li><a href="http://royallib.com/series/ru/11/">К</a></li>
+                                            <li><a href="http://royallib.com/series/ru/12/">Л</a></li>
+                                            <li><a href="http://royallib.com/series/ru/13/">М</a></li>
+                                            <li><a href="http://royallib.com/series/ru/14/">Н</a></li>
+                                            <li><a href="http://royallib.com/series/ru/15/">О</a></li>
+                                            <li><a href="http://royallib.com/series/ru/16/">П</a></li>
+                                            <li><a href="http://royallib.com/series/ru/17/">Р</a></li>
+                                            <li><a href="http://royallib.com/series/ru/18/">С</a></li>
+                                            <li><a href="http://royallib.com/series/ru/19/">Т</a></li>
+                                            <li><a href="http://royallib.com/series/ru/20/">У</a></li>
+                                            <li><a href="http://royallib.com/series/ru/21/">Ф</a></li>
+                                            <li><a href="http://royallib.com/series/ru/22/">Х</a></li>
+                                            <li><a href="http://royallib.com/series/ru/23/">Ц</a></li>
+                                            <li><a href="http://royallib.com/series/ru/24/">Ч</a></li>
+                                            <li><a href="http://royallib.com/series/ru/25/">Ш</a></li>
+                                            <li><a href="http://royallib.com/series/ru/26/">Щ</a></li>
+                                            <li><a href="http://royallib.com/series/ru/27/">Ы</a></li>
+                                            <li><a href="http://royallib.com/series/ru/28/">Э</a></li>
+                                            <li><a href="http://royallib.com/series/ru/29/">Ю</a></li>
+                                            <li><a href="http://royallib.com/series/ru/30/">Я</a></li>
+                                        <li><a href="http://royallib.com/series/en/0/">[A-Z]</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- center -->
+        <div class="center nuclear">
+                                    <!-- content -->
+            <div class="wrapper">
+                <div class="content" style="width: 100%; padding: 0;margin: 0">    <div style="width:100%; text-align: center;">
+        <!--noindex-->
+<div id="ambn47604" style="text-align: center;"></div>
+
+<center>[<a href="http://royallib.com/users/remove_ads"><font style="font-size: 11px;">убрать рекламу</font></a>]</center>
+<!--/noindex-->
+    </div>
+    <p>&nbsp;</p>
+    <div style="padding-left: 15px;">
+
+        <a href="http://royallib.com" title="Главная страница библиотеки">RoyalLib.Com</a>
+
+
+         >> <a href="http://royallib.com/genre/klassicheskaya_proza/" title="Все книги жанра: Классическая проза">Классическая проза</a>
+
+         >> <a href="http://royallib.com/serie/biblioteka_shkolnika.html" title="Все книги серии: Библиотека школьника">Библиотека школьника</a> >>
+
+        <a href="http://royallib.com/author/gogol_nikolay.html" title="Все книги Гоголь Николай">Гоголь Николай</a> >>
+        <a href="http://royallib.com/book/gogol_nikolay/shinel.html" title="Скачать книгу">Шинель - скачать книгу</a>
+    </div>
+    <p>&nbsp;</p>
+                <div id="showOpt" style="overflow:hidden; left: 4px; cursor: pointer; position: relative; font-weight: bold; float: left; background: url('http://royallib.com/img/expand.png') no-repeat; width:32px; height:32px; display: none" onclick="showhideOptTd();"> </div>
+            <div id="optTd" style="width: 250px; overflow:hidden; padding: 20px 20px 0px 20px; float: left; position: relative; border-radius: 4px; height: expression(document.body.clientHeight-100+"px")" width="200px" valign="top">
+                <div style="display: none" id="bid">71969</div>
+                <div style="display: none" id="fs">118965</div>
+                <b id="showhideOptText" onclick="showhideOptTd();" style="cursor:pointer; background: url('http://royallib.com/img/arrow_hide.png') no-repeat; padding: 0 0 0 20px" title="Нажмите чтобы сделать текст по всей ширине страницы">Спрятать опции</b><br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<b style="cursor: pointer; font-size:17px" onclick="javascript:processAjax();" title="Перейти в самое начало книги">Начало</b><br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<b style="cursor: pointer; font-size:17px" onclick="javascript:savePosition();" title="Продолжая чтение, будет загружена страница, на которой Вы поставили закладку.">Установить закладку</b><br /><br />
+                <b id="optButton" style="cursor: pointer; font-size:17px" onclick="javascript:openDiv('opt');">+</b>&nbsp;&nbsp;<b style="cursor: pointer; font-size: 18px" onclick="javascript:openDiv('opt');" title="Изменение параметров текста, фона страницы">Настройки</b><br />
+                <div id="opt" style="display: none;">
+                    <b style="font-size: 15px; color: #4B563F">Размер шрифта:</b><br />
+                                            <b style="cursor: pointer; font-size: 14px" onclick="javascript:setFontSize(14);">14</b> |                                            <b style="cursor: pointer; font-size: 16px" onclick="javascript:setFontSize(16);">16</b> |                                            <b style="cursor: pointer; font-size: 18px" onclick="javascript:setFontSize(18);">18</b> |                                            <b style="cursor: pointer; font-size: 20px" onclick="javascript:setFontSize(20);">20</b> |                                            <b style="cursor: pointer; font-size: 22px" onclick="javascript:setFontSize(22);">22</b> |                                            <b style="cursor: pointer; font-size: 24px" onclick="javascript:setFontSize(24);">24</b>                                         <br /><br />
+                    <b style="font-size: 15px; color: #4B563F">Шрифт:</b><br />
+                    <div id="fonts" style="display: none"></div>
+                    <br />
+                    <b style="font-size: 15px; color: #4B563F">Цвет текста:</b><br />
+                    <input style="width: 21px; height: 20px; border: 0px; cursor: default;" class="color" id="fontColor" size="5" />
+                    <b style="cursor: pointer;" onclick="javascript:setFontColor();" title="Нажмите чтобы применить выбранные настройки">Установить</b>
+                    <br />
+                    <b style="font-size: 15px; color: #4B563F">Цвет фона:</b><br />
+                    <input style="width: 21px; height: 20px; border: 0px; cursor: default;" class="color" id="bgColor" size="5" />
+                    <b style="cursor: pointer;" onclick="javascript:setBgColor();" title="Нажмите чтобы применить выбранные настройки">Установить</b>
+                    <br /><br />
+                    <b style="cursor: pointer; font-size: 15px; " onclick="javascript:resetOpt();" title="Нажмите чтобы вернуть настройки шрифта и фона в первоначальное состояние">Сбросить настройки</b>
+                    <br /><br />
+                </div>
+                            </div>
+            <div id="contentTD" style="margin:0 auto; padding: 20px 20px 20px 20px; text-align: center; position: relative;overflow:hidden;">
+
+                <div id="progressText" style="margin:0 auto; text-align: center"></div>
+                <div style="width: 120px;margin:0 auto;" id="progressBar" class="progressBar"><img border="0" src="http://royallib.com/img/bar.png" usemap="#prbar">
+
+                    <map name="prbar">
+                                                                                                                                    <area shape="rect" coords="0, 0, 20, 12" style="cursor: pointer;" onclick="javascript:processAjax(0)" />
+                                                                                                                                        <area shape="rect" coords="20, 0, 40, 12" style="cursor: pointer;" onclick="javascript:processAjax(20480)" />
+                                                                                                                                        <area shape="rect" coords="40, 0, 60, 12" style="cursor: pointer;" onclick="javascript:processAjax(40960)" />
+                                                                                                                                        <area shape="rect" coords="60, 0, 80, 12" style="cursor: pointer;" onclick="javascript:processAjax(61440)" />
+                                                                                                                                        <area shape="rect" coords="80, 0, 100, 12" style="cursor: pointer;" onclick="javascript:processAjax(81920)" />
+                                                                                                                                        <area shape="rect" coords="100, 0, 120, 12" style="cursor: pointer;" onclick="javascript:processAjax(102400)" />
+                                                                        </map>
+                </div>
+                <div style="margin:0 auto; font-weight: bold; font-size: 18px" id="statusDiv"></div>
+                <div id="loadingDiv" style="margin:0 auto;text-align: center; display: none;"><img src="http://royallib.com/img/loading.gif?s=666" /></div>
+                <div id="topSearchDiv" style="margin:0 auto; display: none;"><center style="font-weight: bold;"><b style="cursor: pointer;" id="prevPage">&lt;&lt;</b>
+                        <select onchange="javascript:changePage(this.selectedIndex);">
+                                                                                            <option id="page_1">1</option>
+                                                                                            <option id="page_2">2</option>
+                                                                                            <option id="page_3">3</option>
+                                                                                            <option id="page_4">4</option>
+                                                                                            <option id="page_5">5</option>
+                                                                                            <option id="page_6">6</option>
+                                                    </select>
+                        <b style="cursor: pointer;" id="nextPage">&gt;&gt;</b></center></div>
+                <div id="contentDiv"></div>
+                <br /><br />
+                <div id="bottomSearchDiv" style="margin:0 auto; display: none;"><center style="font-weight: bold;"><a style="cursor: pointer;" id="prevPageBottom">&lt;&lt;</a>&nbsp;&nbsp;<a style="cursor: pointer;" id="nextPageBottom">&gt;&gt;</a>
+
+                    </center></div>
+            </div>
+
+<script language="javascript">
+	var fonts = [];
+	fonts.push("Arial");
+	fonts.push("Century");
+	fonts.push("Courier");
+	fonts.push("Tahoma");
+	fonts.push("Times");
+	fonts.push("Verdana");
+	d = new Detector();
+	
+	var fontsPresent = '';
+	
+	for (i=0; i<fonts.length; i++) {
+		if (d.test(fonts[i])) {
+			fontsPresent += '<b style="cursor: pointer; font-family: ' + fonts[i] + '" id="' + fonts[i] + '" onclick="setFontName(\'' + fonts[i] + '\');">'+fonts[i] +'</b><br />';			
+		}
+	}
+	
+	document.getElementById('fonts').innerHTML = fontsPresent;
+</script>
+
+</div>
+</div>
+<!-- /content -->
+</div>
+<!-- /center -->
+
+
+
+<div id="modal" class="popupContainer" style="display:none;">
+    <header class="popupHeader">
+        <span class="header_title">Вход</span>
+        <span class="modal_close"><i class="fa fa-times">x</i></span>
+    </header>
+    <section class="popupBody">
+
+        <div class="user_login">
+                        <form action="http://royallib.com/users/login" method="post">
+
+                <label>Email / Логин</label>
+                <input type="text" name="data[username]" />
+                <br /><br />
+
+                <label>Пароль</label>
+                <input type="password" name="data[pass]" />
+                <br /><br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" name="data[rememberMe]" value="1" />
+                    <label for="remember">Запомнить меня</label>
+                </div>
+
+                <div class="action_btns">
+                    <input type="hidden" name="result_url" value="/read/gogol_nikolay/shinel.html" />
+                    <input style="padding: 0px 10px 0px 10px; background-color: #6F6151; color: #E5CAA4; font-weight: bold" type="submit" value="Войти" />
+                </div>
+            </form>
+            <a href="http://royallib.com/users/reminder" class="forgot_password">Забыли пароль?</a>
+            <a href="http://royallib.com/users/registration" class="registration">Регистрация на сайте</a>
+        </div>
+    </section>
+</div>
+
+
+<script>
+    $("#modal_trigger").leanModal({ top : 200, overlay : 0.6, closeButton: ".modal_close" });
+</script>
+
+<!-- footer -->
+<div class="footer">
+    <p>&copy; Электронная библиотека RoyalLib.Com, 2010-2015. Контактный e-mail: <a href="mailto:royallib.ru@gmail.com" class="mail">royallib.ru@gmail.com</a> | <a href="http://royallib.com/copyright.html">Авторам и правообладателям</a></p>
+</div>
+<!-- /footer -->
+</div>
+</div>
+
+    
+        <!--noindex-->
+
+<script type="text/javascript" src="//am15.net/bn.php?s=62627&f=3&d=47604"></script>
+
+        <!--/noindex-->
+    
+</body>
+</html>

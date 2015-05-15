@@ -1,0 +1,63 @@
+<?import javafx.geometry.Insets?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<VBox fx:controller="sample.LibrarySurfaceController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <children>
+        <HBox spacing="6">
+            <children>
+                <Label text="Name"/>
+                <TextField fx:id="name"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="Author"/>
+                <TextField fx:id="author"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="Genre"/>
+                <TextField fx:id="genre"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="Year"/>
+                <TextField fx:id="year"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="Description"/>
+                <TextArea fx:id="description"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <Button text="Save" onAction="#handleSaveAction"/>
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+</VBox>
