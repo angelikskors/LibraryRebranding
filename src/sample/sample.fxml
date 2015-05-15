@@ -12,7 +12,7 @@
     <children>
         <HBox spacing="6">
             <children>
-                <Label text="Name"/>
+                <Label text="%key_name"/>
                 <TextField fx:id="name"/>
             </children>
             <padding>
@@ -21,7 +21,7 @@
         </HBox>
         <HBox spacing="6">
             <children>
-                <Label text="Author"/>
+                <Label text="%key_author"/>
                 <TextField fx:id="author"/>
             </children>
             <padding>
@@ -30,7 +30,7 @@
         </HBox>
         <HBox spacing="6">
             <children>
-                <Label text="Genre"/>
+                <Label text="%key_genre"/>
                 <TextField fx:id="genre"/>
             </children>
             <padding>
@@ -39,7 +39,7 @@
         </HBox>
         <HBox spacing="6">
             <children>
-                <Label text="Year"/>
+                <Label text="%key_year"/>
                 <TextField fx:id="year"/>
             </children>
             <padding>
@@ -48,14 +48,14 @@
         </HBox>
         <HBox spacing="6">
             <children>
-                <Label text="Description"/>
+                <Label text="%key_description"/>
                 <TextArea fx:id="description"/>
             </children>
             <padding>
                 <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
             </padding>
         </HBox>
-        <Button text="Save" onAction="#handleSaveAction"/>
+        <Button text="%key_save" onAction="#handleSaveAction"/>
     </children>
     <padding>
         <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>

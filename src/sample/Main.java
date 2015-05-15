@@ -9,13 +9,20 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Add Book");
+    public void start(Stage primaryStage) throws Exception {
+        ResourceBundle resources = ResourceBundle.getBundle(
+                "res/string",
+                new Locale("ru", "RU"),
+                new UTF8Control());
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"),
+                resources);
+        primaryStage.setTitle(resources.getString("key_title"));
         primaryStage.setScene(new Scene(root, 650, 275));
         primaryStage.show();
     }
