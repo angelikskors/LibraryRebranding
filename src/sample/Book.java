@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 
 public class Book {
 
-    private Image image;
+    private String image;
     private String commentary;
     private SimpleStringProperty name=new SimpleStringProperty("");
     private SimpleStringProperty author=new SimpleStringProperty("");
@@ -48,16 +48,16 @@ public class Book {
         this(genre, name, author, year,page,commentary);
        setDescription(description);
     }
-    public Book(String genre, String name, String author, int year,int page,String commentary,String description, Image image){
+    public Book(String genre, String name, String author, int year,int page,String commentary,String description, String image){
         this(genre, name, author, year,page,commentary,description);
         setImage(image);
     }
 
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

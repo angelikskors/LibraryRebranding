@@ -15,10 +15,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader loader = FXMLHelper.loader("views/books_window.fxml", resources);
+        FXMLLoader loader = FXMLHelper.loader("views/MainWindow.fxml");
         Parent root = loader.load();
         primaryStage.setTitle(resources.getString("key_title"));
-        primaryStage.setScene(new Scene(root, 650, 275));
+        root.getStyleClass().add("sample.views.style.css");
+        primaryStage.setScene(new Scene(root, 700, 380));
         primaryStage.show();
     }
 

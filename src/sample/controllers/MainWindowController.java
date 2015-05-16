@@ -1,7 +1,57 @@
 package sample.controllers;
 
-/**
- * Created by PC Kors on 16.05.2015.
- */
-public class MainWindowController {
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import sample.utils.FXMLHelper;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainWindowController implements Initializable {
+    @FXML
+    private ImageView img;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Image image = new Image("file: bookInCloud.png");
+        img = new ImageView();
+        img.setImage(image);
+
+
+
+    }
+
+    @FXML
+    public void handleBase(ActionEvent actionEvent) {
+        ResourceBundle resources = FXMLHelper.resources();
+        FXMLLoader loader = FXMLHelper.loader("views/books_window.fxml", resources);
+
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+        stage.setTitle("Base");
+        Scene scene = new Scene(root, 820, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void handleService(ActionEvent actionEvent) {
+
+    }
+    @FXML
+    public void handleContactUs(ActionEvent actionEvent) {
+    }
 }

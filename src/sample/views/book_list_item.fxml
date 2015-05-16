@@ -9,15 +9,26 @@
 <?import javafx.scene.control.TextArea?>
 
 <?import javafx.scene.image.ImageView?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" spacing="6" type="javafx.scene.layout.HBox">
-    <children>
-        <ImageView fx:id="coverView"/>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<fx:root  xmlns:fx="http://javafx.com/fxml/1" spacing="6" type="javafx.scene.layout.HBox">
+    <BorderPane maxHeight="-Infinity"
+                maxWidth="-Infinity"
+                minHeight="-Infinity"
+                minWidth="-Infinity"
+                prefHeight="400.0"
+                prefWidth="600.0"
+
+                styleClass="background" stylesheets="@book_list_item.css">
+        <right>
+
         <VBox spacing="6">
             <children>
                 <HBox spacing="6">
                     <children>
-                        <Label text="%key_name"/>
-                        <TextField fx:id="nameField"/>
+                        <Label text="%key_name" styleClass="label" stylesheets="@book_list_item.css"/>
+                        <TextField minWidth="250" fx:id="nameField"/>
                     </children>
                     <padding>
                         <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
@@ -25,8 +36,55 @@
                 </HBox>
                 <HBox spacing="6">
                     <children>
-                        <Label text="%key_author"/>
+                        <Label text="%key_author" styleClass="label" stylesheets="@book_list_item.css"/>
                         <TextField fx:id="authorField"/>
+                    </children>
+                    <padding>
+                        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+                    </padding>
+                </HBox>
+                <HBox spacing="6">
+                    <children>
+                        <Label text="%key_genre" styleClass="label" stylesheets="@book_list_item.css"/>
+                        <TextField fx:id="genreField"/>
+                    </children>
+                    <padding>
+                        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+                    </padding>
+                </HBox>
+                <HBox spacing="6">
+                <children>
+                    <Label text="%key_year" styleClass="label" stylesheets="@book_list_item.css"/>
+                    <TextField fx:id="yearField"/>
+                </children>
+                <padding>
+                    <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+                </padding>
+            </HBox>
+                <HBox spacing="6">
+                    <children>
+                        <Label text="%key_pages" styleClass="label" stylesheets="@book_list_item.css"/>
+                        <TextField fx:id="pagesField"/>
+                    </children>
+                    <padding>
+                        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+                    </padding>
+                </HBox>
+                <HBox spacing="6">
+                    <children>
+                        <Label text="%key_description" styleClass="label" stylesheets="@book_list_item.css"/>
+                        <TextArea fx:id="descriptionArea"/>
+                    </children>
+                    <padding>
+                        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+                    </padding>
+                </HBox>
+
+                <HBox spacing="6">
+                    <children>
+                        <Button text="Edit" onAction="#handleEdit" styleClass="little-button" stylesheets="@book_list_item.css" />
+                        <Button text="Add Comment" onAction="#handleAddComment" styleClass="little-button" stylesheets="@book_list_item.css"/>
+                        <Button text="Download" onAction="#handleDownload" styleClass="little-button" stylesheets="@book_list_item.css"/>
                     </children>
                     <padding>
                         <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
@@ -36,9 +94,15 @@
             <padding>
                 <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
             </padding>
+            <BorderPane.margin>
+            <Insets/>
+        </BorderPane.margin>
         </VBox>
-    </children>
+        </right>
+        <left>
+            <ImageView   fx:id="coverView" />
+        </left>
     <padding>
         <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
-    </padding>
+    </padding> </BorderPane>
 </fx:root>
