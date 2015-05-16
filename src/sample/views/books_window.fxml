@@ -1,0 +1,13 @@
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<VBox fx:controller="sample.controllers.BooksController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <children>
+        <ListView fx:id="booksView" />
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+</VBox>
