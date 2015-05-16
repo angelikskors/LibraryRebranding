@@ -11,9 +11,6 @@ public class FXMLHelper {
 
     private static final String LOCALE_RESOURCE = "res/string";
 
-    private static final String LANGUAGE = "ru";
-    private static final String COUNTRY = "RU";
-
     public static FXMLLoader loader(String xmlPath) {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(xmlPath),
                 resources());
@@ -28,8 +25,8 @@ public class FXMLHelper {
 
     public static ResourceBundle resources() {
         return ResourceBundle.getBundle(
-                "res/string",
-                new Locale(LANGUAGE, COUNTRY),
+                LOCALE_RESOURCE,
+                Locale.getDefault(),
                 new UTF8Control());
     }
 }

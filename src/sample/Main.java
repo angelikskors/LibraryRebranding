@@ -8,12 +8,14 @@ import javafx.stage.Stage;
 import sample.utils.FXMLHelper;
 
 import java.io.*;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        //Locale.setDefault(new Locale("ru", "RU"));
         ResourceBundle resources = FXMLHelper.resources();
         FXMLLoader loader = FXMLHelper.loader("views/MainWindow.fxml");
         Parent root = loader.load();
