@@ -2,20 +2,20 @@ package sample;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.image.Image;
 
 public class Book {
 
     private String image;
     private String commentary;
-    private SimpleStringProperty name=new SimpleStringProperty("");
-    private SimpleStringProperty author=new SimpleStringProperty("");
-    private SimpleStringProperty genre=new SimpleStringProperty("");
-    private SimpleIntegerProperty year=new SimpleIntegerProperty();
-    private  SimpleIntegerProperty page=new SimpleIntegerProperty();
-    private SimpleStringProperty description=new SimpleStringProperty("");
-    private SimpleIntegerProperty popularity=new SimpleIntegerProperty();
-    public Book(String genre, String name, String author, int year,int page,String commentary) {
+    private SimpleStringProperty name = new SimpleStringProperty("");
+    private SimpleStringProperty author = new SimpleStringProperty("");
+    private SimpleStringProperty genre = new SimpleStringProperty("");
+    private SimpleIntegerProperty year = new SimpleIntegerProperty();
+    private SimpleIntegerProperty page = new SimpleIntegerProperty();
+    private SimpleStringProperty description = new SimpleStringProperty("");
+    private SimpleIntegerProperty popularity = new SimpleIntegerProperty();
+
+    public Book(String genre, String name, String author, int year, int page, String commentary) {
         setGenre(genre);
         setName(name);
         setAuthor(author);
@@ -24,16 +24,26 @@ public class Book {
         setCommentary(commentary);
     }
 
+    public Book(String genre, String name, String author, int year, int page, String commentary, String description) {
+        this(genre, name, author, year, page, commentary);
+        setDescription(description);
+    }
+
+    public Book(String genre, String name, String author, int year, int page, String commentary, String description, String image) {
+        this(genre, name, author, year, page, commentary, description);
+        setImage(image);
+    }
+
     public int getPage() {
         return page.get();
     }
 
-    public SimpleIntegerProperty pageProperty() {
-        return page;
-    }
-
     public void setPage(int page) {
         this.page.set(page);
+    }
+
+    public SimpleIntegerProperty pageProperty() {
+        return page;
     }
 
     public String getCommentary() {
@@ -42,15 +52,6 @@ public class Book {
 
     public void setCommentary(String commentary) {
         this.commentary = commentary;
-    }
-
-    public Book(String genre, String name, String author, int year,int page,String commentary,String description) {
-        this(genre, name, author, year,page,commentary);
-       setDescription(description);
-    }
-    public Book(String genre, String name, String author, int year,int page,String commentary,String description, String image){
-        this(genre, name, author, year,page,commentary,description);
-        setImage(image);
     }
 
     public String getImage() {
@@ -82,7 +83,7 @@ public class Book {
     }
 
     public void setGenre(String genre) {
-        this.genre.set( genre);
+        this.genre.set(genre);
     }
 
     public int getYear() {
@@ -92,6 +93,7 @@ public class Book {
     public void setYear(int year) {
         this.year.set(year);
     }
+
     public int getPopularity() {
         return popularity.get();
     }
@@ -107,6 +109,7 @@ public class Book {
     public void setDescription(String description) {
         this.description.set(description);
     }
+
     public SimpleStringProperty nameProperty() {
         return name;
     }
@@ -114,6 +117,7 @@ public class Book {
     public SimpleStringProperty authorProperty() {
         return author;
     }
+
     public SimpleStringProperty genreProperty() {
         return genre;
     }
@@ -122,14 +126,15 @@ public class Book {
 
         return year;
     }
+
     public SimpleStringProperty descriptionProperty() {
         return description;
     }
+
     public SimpleIntegerProperty popularityProperty() {
 
         return popularity;
     }
-
 
 
 }

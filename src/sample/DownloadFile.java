@@ -1,9 +1,6 @@
 package sample;
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.io.*;
 import java.net.URL;
 
 
@@ -19,8 +16,7 @@ public class DownloadFile {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
         int n = 0;
-        while (-1!=(n=in.read(buf)))
-        {
+        while (-1 != (n = in.read(buf))) {
             out.write(buf, 0, n);
         }
         out.close();
@@ -32,4 +28,6 @@ public class DownloadFile {
         fos.close();
         //End download code
 
-        System.out.println("Finished");}}
+        System.out.println("Finished");
+    }
+}

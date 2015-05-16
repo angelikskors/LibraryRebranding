@@ -1,14 +1,11 @@
 package sample.views;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -16,13 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import sample.Book;
-import sample.Main;
-import sample.controllers.BookEditController;
-import sample.controllers.BooksController;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
-import java.util.ResourceBundle;
 
 public class BookListItemView extends HBox {
 
@@ -40,9 +33,6 @@ public class BookListItemView extends HBox {
     private TextArea descriptionArea;
     @FXML
     private ImageView coverView;
-
-
-
 
 
     public BookListItemView() {
@@ -63,29 +53,32 @@ public class BookListItemView extends HBox {
         yearField.textProperty().unbindBidirectional(book.yearProperty());
         pagesField.textProperty().unbindBidirectional(book.pageProperty());
         descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
-        Image image=new Image(book.getImage());
-         coverView=new ImageView();
+        Image image = new Image(book.getImage());
+        coverView = new ImageView();
         coverView.setFitWidth(150);
         coverView.setFitHeight(160);
         coverView.setImage(image);
         setPadding(new Insets(10, 10, 10, 10));
         getChildren().add(coverView);
     }
-    @FXML
-    public void handleEdit(ActionEvent actionEvent){
-
-        }
 
     @FXML
-    public void handleAddComment(ActionEvent actionEvent){
+    public void handleEdit(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void handleAddComment(ActionEvent actionEvent) {
 
 
     }
+
     @FXML
-    public void handleDownload(ActionEvent actionEvent){
+    public void handleDownload(ActionEvent actionEvent) {
 
 
     }
+
     @FXML
     private void showNewWindow(String title, Parent root) {
         Stage stage = new Stage();
@@ -93,7 +86,6 @@ public class BookListItemView extends HBox {
         stage.setScene(new Scene(root));
         stage.show();
     }
-
 
 
 }

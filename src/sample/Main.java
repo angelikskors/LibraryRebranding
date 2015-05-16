@@ -7,10 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.utils.FXMLHelper;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
+
+    public static void main(String[] args) throws IOException {
+        launch(args);
+
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -21,11 +26,5 @@ public class Main extends Application {
         root.getStyleClass().add("sample.views.style.css");
         primaryStage.setScene(new Scene(root, 700, 380));
         primaryStage.show();
-    }
-
-
-    public static void main(String[] args) throws IOException {
-        launch(args);
-
     }
 }

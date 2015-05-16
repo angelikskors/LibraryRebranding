@@ -26,7 +26,6 @@ public class MainWindowController implements Initializable {
         img.setImage(image);
 
 
-
     }
 
     @FXML
@@ -47,10 +46,12 @@ public class MainWindowController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     public void handleService(ActionEvent actionEvent) {
 
     }
+
     @FXML
     public void handleContactUs(ActionEvent actionEvent) {
     }
