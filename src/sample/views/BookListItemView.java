@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -16,6 +15,7 @@ import javafx.stage.Stage;
 import sample.Book;
 import sample.DownloadFile;
 import sample.Main;
+import sample.controllers.BookEditController;
 import sample.controllers.BooksController;
 import sample.utils.FXMLHelper;
 
@@ -38,9 +38,7 @@ public class BookListItemView extends HBox {
     @FXML
     private ImageView coverView;
 
-
-
-
+    private Book currentBook;
 
     public BookListItemView() {
         FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_list_item.fxml");
@@ -54,6 +52,7 @@ public class BookListItemView extends HBox {
     }
 
     public void setBook(Book book) {
+        currentBook = book;
         nameField.textProperty().bindBidirectional(book.nameProperty());
         authorField.textProperty().bindBidirectional(book.authorProperty());
         genreField.textProperty().bindBidirectional(book.genreProperty());
@@ -74,15 +73,13 @@ public class BookListItemView extends HBox {
 
     @FXML
     public void handleEdit(ActionEvent actionEvent) {
-Book book= new BooksController().booksView.getSelectionModel().getSelectedItem();
-
-        if (book != null) {
+        if (currentBook != null) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/book_edit.fxml"));
+                FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_edit.fxml");
                 Parent root = fxmlLoader.load();
-                BookListItemView controller =
+                BookEditController controller =
                         fxmlLoader.getController();
-                controller.setBook(book);
+                controller.setBook(currentBook);
 
                 showNewWindow("Edit", root);
             } catch (IOException e) {
