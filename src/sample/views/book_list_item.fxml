@@ -11,14 +11,7 @@
                 prefWidth="600.0"
 
                 styleClass="background" stylesheets="@book_list_item.css">
-      <top>
-          <HBox spacing="6">
-              <children>
-                  <Button text="Add new book" onAction="#handleAddNew" />
-              </children>
-          </HBox>
 
-      </top>
 
         <right>
 

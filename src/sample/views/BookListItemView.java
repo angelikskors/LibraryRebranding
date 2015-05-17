@@ -74,21 +74,21 @@ public class BookListItemView extends HBox {
 
     @FXML
     public void handleEdit(ActionEvent actionEvent) {
-//Book book= new BooksController().booksView.getSelectionModel().getSelectedItem();
-//
-//        if (book != null) {
-//            try {
-//                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/book_edit.fxml"));
-//                Parent root = fxmlLoader.load();
-//                BookListItemView controller =
-//                        fxmlLoader.getController();
-//                controller.setBook(book);
-//
-//                showNewWindow("Edit", root);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
+Book book= new BooksController().booksView.getSelectionModel().getSelectedItem();
+
+        if (book != null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/book_edit.fxml"));
+                Parent root = fxmlLoader.load();
+                BookListItemView controller =
+                        fxmlLoader.getController();
+                controller.setBook(book);
+
+                showNewWindow("Edit", root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
