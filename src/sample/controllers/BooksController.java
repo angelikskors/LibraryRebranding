@@ -23,8 +23,8 @@ public class BooksController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdg", "dfgfdgf"));
-        books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdf", "dfgfdfg"));
+        books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdg"));
+        books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdf"));
         booksView.setCellFactory(new Callback<ListView<Book>, ListCell<Book>>() {
             @Override
             public ListCell<Book> call(ListView<Book> param) {

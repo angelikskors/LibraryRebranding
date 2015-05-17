@@ -35,6 +35,7 @@ public class BookListItemView extends HBox {
     private ImageView coverView;
 
 
+
     public BookListItemView() {
         FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_list_item.fxml");
         fxmlLoader.setRoot(this);

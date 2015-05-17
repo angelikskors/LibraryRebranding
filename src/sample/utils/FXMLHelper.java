@@ -29,7 +29,6 @@ public class FXMLHelper {
     public static ResourceBundle resources() {
         return ResourceBundle.getBundle(
                 "res/string",
-                new Locale(LANGUAGE, COUNTRY),
-                new UTF8Control());
+  new UTF8Control());
     }
 }
