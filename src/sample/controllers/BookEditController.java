@@ -40,7 +40,8 @@ public class BookEditController implements Initializable {
 
 
     public void setBook(Book book) {
-
+        nameField.textProperty().bindBidirectional(book.nameProperty());
+        authorField.textProperty().bindBidirectional(book.authorProperty());
     }
 
     public void handleEdit(ActionEvent actionEvent) {
