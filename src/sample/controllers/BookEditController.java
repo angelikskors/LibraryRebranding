@@ -39,10 +39,13 @@ public class BookEditController implements Initializable {
     }
 
 
+    public void setBook(Book book) {
 
+    }
 
+    public void handleEdit(ActionEvent actionEvent) {
 
-
+    }
 }
 
 
