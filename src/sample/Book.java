@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class Book {
 
     private String image;
-    private String commentary;
+    private String path;
     private SimpleStringProperty name = new SimpleStringProperty("");
     private SimpleStringProperty author = new SimpleStringProperty("");
     private SimpleStringProperty genre = new SimpleStringProperty("");
@@ -15,22 +15,22 @@ public class Book {
     private SimpleStringProperty description = new SimpleStringProperty("");
     private SimpleIntegerProperty popularity = new SimpleIntegerProperty();
 
-    public Book(String genre, String name, String author, int year, int page, String commentary) {
+    public Book(String genre, String name, String author, int year, int page, String path) {
         setGenre(genre);
         setName(name);
         setAuthor(author);
         setYear(year);
         setPage(page);
-        setCommentary(commentary);
+        setPath(path);
     }
 
-    public Book(String genre, String name, String author, int year, int page, String commentary, String description) {
-        this(genre, name, author, year, page, commentary);
+    public Book(String genre, String name, String author, int year, int page, String path, String description) {
+        this(genre, name, author, year, page, path);
         setDescription(description);
     }
 
-    public Book(String genre, String name, String author, int year, int page, String commentary, String description, String image) {
-        this(genre, name, author, year, page, commentary, description);
+    public Book(String genre, String name, String author, int year, int page, String path, String description, String image) {
+        this(genre, name, author, year, page, path, description);
         setImage(image);
     }
 
@@ -46,12 +46,12 @@ public class Book {
         return page;
     }
 
-    public String getCommentary() {
-        return commentary;
+    public String getPath() {
+        return path;
     }
 
-    public void setCommentary(String commentary) {
-        this.commentary = commentary;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String getImage() {

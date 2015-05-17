@@ -19,6 +19,8 @@ import java.util.ResourceBundle;
 
 public class BookEditController implements Initializable {
     @FXML
+    public TextField authorField;
+    @FXML
     private TextField nameField;
 
     @FXML
@@ -37,31 +39,10 @@ public class BookEditController implements Initializable {
     }
 
 
-    public void handleEdit(ActionEvent actionEvent) {
-        Book selectedBook = new BooksController().booksView.getSelectionModel().getSelectedItem();
-
-        if (selectedBook != null) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("book_edit.fxml"));
-                Parent root = fxmlLoader.load();
-
-                new BookListItemView().setBook(selectedBook);
-                showNewWindow("Edit", root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
 
-    }
 
-    @FXML
-    private void showNewWindow(String title, Parent root) {
-        Stage stage = new Stage();
-        stage.setTitle(title);
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
+
 }
 
 

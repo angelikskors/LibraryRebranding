@@ -11,6 +11,15 @@
                 prefWidth="600.0"
 
                 styleClass="background" stylesheets="@book_list_item.css">
+      <top>
+          <HBox spacing="6">
+              <children>
+                  <Button text="Add new book" onAction="#handleAddNew" />
+              </children>
+          </HBox>
+
+      </top>
+
         <right>
 
             <VBox spacing="6">
@@ -72,9 +81,9 @@
 
                     <HBox spacing="6">
                         <children>
-                            <Button text="Edit" onAction="#handleEdit" styleClass="little-button"
+                            <Button text="Edit"   onAction="#handleEdit" styleClass="little-button"
                                     stylesheets="@book_list_item.css"/>
-                            <Button text="Add Comment" onAction="#handleAddComment" styleClass="little-button"
+                            <Button text="Add Comment" onAction="#handleAddRate" styleClass="little-button"
                                     stylesheets="@book_list_item.css"/>
                             <Button text="Download" onAction="#handleDownload" styleClass="little-button"
                                     stylesheets="@book_list_item.css"/>

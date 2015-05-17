@@ -15,13 +15,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //Locale.setDefault(new Locale("ru", "RU"));
+        Locale.setDefault(new Locale("", ""));
         ResourceBundle resources = FXMLHelper.resources();
         FXMLLoader loader = FXMLHelper.loader("views/MainWindow.fxml");
         Parent root = loader.load();
         primaryStage.setTitle(resources.getString("key_title"));
         root.getStyleClass().add("sample.views.style.css");
-        primaryStage.setScene(new Scene(root, 700, 380));
+        primaryStage.setScene(new Scene(root, 730, 420));
         primaryStage.show();
     }
 

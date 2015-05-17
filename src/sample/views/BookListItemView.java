@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -13,6 +14,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import sample.Book;
+import sample.DownloadFile;
+import sample.Main;
+import sample.controllers.BooksController;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
@@ -36,6 +40,8 @@ public class BookListItemView extends HBox {
 
 
 
+
+
     public BookListItemView() {
         FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_list_item.fxml");
         fxmlLoader.setRoot(this);
@@ -54,22 +60,43 @@ public class BookListItemView extends HBox {
         yearField.textProperty().unbindBidirectional(book.yearProperty());
         pagesField.textProperty().unbindBidirectional(book.pageProperty());
         descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
-        Image image = new Image(book.getImage());
-        coverView = new ImageView();
-        coverView.setFitWidth(150);
-        coverView.setFitHeight(160);
-        coverView.setImage(image);
-        setPadding(new Insets(10, 10, 10, 10));
-        getChildren().add(coverView);
+        if(book.getImage()!=null){
+            Image image = new Image(book.getImage());
+            coverView = new ImageView();
+            coverView.setFitWidth(150);
+            coverView.setFitHeight(160);
+            coverView.setImage(image);
+            setPadding(new Insets(10, 10, 10, 10));
+            getChildren().add(coverView);
+        }
+
     }
 
     @FXML
     public void handleEdit(ActionEvent actionEvent) {
+//Book book= new BooksController().booksView.getSelectionModel().getSelectedItem();
+//
+//        if (book != null) {
+//            try {
+//                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/book_edit.fxml"));
+//                Parent root = fxmlLoader.load();
+//                BookListItemView controller =
+//                        fxmlLoader.getController();
+//                controller.setBook(book);
+//
+//                showNewWindow("Edit", root);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
     }
 
+
+
+
     @FXML
-    public void handleAddComment(ActionEvent actionEvent) {
+    public void handleAddRate(ActionEvent actionEvent) {
 
 
     }
@@ -77,7 +104,7 @@ public class BookListItemView extends HBox {
     @FXML
     public void handleDownload(ActionEvent actionEvent) {
 
-
+        new DownloadFile(new BooksController().booksView.getSelectionModel().getSelectedItem().getPath());
     }
 
     @FXML

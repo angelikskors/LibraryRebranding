@@ -29,6 +29,7 @@
         <VBox spacing="20.0">
             <children>
                 <Button text="Base" onAction="#handleBase" styleClass="button" stylesheets="@style.css"/>
+                <Button text="Add book " onAction="#handleAddNew" styleClass="button" stylesheets="@style.css"/>
                 <Button text="Service" onAction="#handleService" styleClass="button" stylesheets="@style.css"/>
                 <Button text="Contact us " onAction="#handleContactUs" styleClass="button" stylesheets="@style.css"/>
             </children>

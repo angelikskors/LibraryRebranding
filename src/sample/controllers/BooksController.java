@@ -34,20 +34,7 @@ public class BooksController implements Initializable {
         booksView.setItems(books);
     }
 
-    @FXML
-    private void handleEdit() {
 
-    }
-
-    @FXML
-    private void handleDownload() {
-
-    }
-
-    @FXML
-    private void handleAddComment() {
-
-    }
 
 
     private void showNewWindow(String title, Parent root) {

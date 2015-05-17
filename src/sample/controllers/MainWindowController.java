@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import sample.Main;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
@@ -27,6 +28,21 @@ public class MainWindowController implements Initializable {
 
 
     }
+    @FXML
+    public void handleAddNew(){
+        ResourceBundle resources = FXMLHelper.resources();
+        FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_edit.fxml",resources);
+
+        Parent root1 = null;
+        try {
+            root1 = fxmlLoader.load();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+
+        showNewWindow("Add new book", root1);
+    }
 
     @FXML
     public void handleBase(ActionEvent actionEvent) {
@@ -42,6 +58,13 @@ public class MainWindowController implements Initializable {
 
         Stage stage = new Stage();
         stage.setTitle("Base");
+        Scene scene = new Scene(root, 820, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+    private void showNewWindow(String title, Parent root) {
+        Stage stage = new Stage();
+        stage.setTitle(title);
         Scene scene = new Scene(root, 820, 400);
         stage.setScene(scene);
         stage.show();
