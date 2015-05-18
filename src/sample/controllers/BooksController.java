@@ -23,7 +23,7 @@ public class BooksController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdg"));
+        books.add(new Book( "Psychological thriller novel", "The Talented Mr. Ripley","Patricia Highsmith", 1955,400, null,"The detectives by Patricia Highsmith is more than just ordinary investigation stories. They more like psychological novels with detective component. Tom Ripley is 25-years man, who was grown up without parents by hateful aunt. He is quite poor and lives in poverty all his life. That’s why he dreams of a luxury life with travelling and buying expensive things every day so much. But because he isn’t good educated, have no skills nor genius ideas he just can’t became rich not breaking the law. His actions are disgusting and have no borders. After scrolling accounting frauds during some time, Tom becomes beware of police. So when a famous financier Herbert Greenleaf proposing a job in London Tom agrees immediately.","file:TheTalented.jpg"));
         books.add(new Book("aaasfsf", "saaa", "aaa", 11, 11, "dfgdf"));
         booksView.setCellFactory(new Callback<ListView<Book>, ListCell<Book>>() {
             @Override

@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import sample.Book;
 import sample.DownloadFile;
 import sample.Main;
@@ -56,14 +57,37 @@ public class BookListItemView extends HBox {
         nameField.textProperty().bindBidirectional(book.nameProperty());
         authorField.textProperty().bindBidirectional(book.authorProperty());
         genreField.textProperty().bindBidirectional(book.genreProperty());
-        yearField.textProperty().unbindBidirectional(book.yearProperty());
-        pagesField.textProperty().unbindBidirectional(book.pageProperty());
+
+        yearField.textProperty().bindBidirectional(book.yearProperty(), new StringConverter<Number>() {
+            @Override
+            public String toString(Number object) {
+                return String.valueOf(object);
+            }
+
+            @Override
+            public Number fromString(String string) {
+                return Integer.parseInt(string);
+            }
+        });
+
+        pagesField.textProperty().bindBidirectional(book.pageProperty(), new StringConverter<Number>() {
+            @Override
+            public String toString(Number object) {
+                return String.valueOf(object);
+            }
+
+            @Override
+            public Number fromString(String string) {
+                return Integer.parseInt(string);
+            }
+        });
         descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
-        if(book.getImage()!=null){
-            Image image = new Image(book.getImage());
+
+        if(currentBook.getImage()!=null){
+            Image image = new Image(currentBook.getImage());
             coverView = new ImageView();
             coverView.setFitWidth(150);
-            coverView.setFitHeight(160);
+            coverView.setFitHeight(170);
             coverView.setImage(image);
             setPadding(new Insets(10, 10, 10, 10));
             getChildren().add(coverView);

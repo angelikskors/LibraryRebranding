@@ -53,7 +53,7 @@
         <HBox spacing="6">
             <children>
                 <Label text="%key_description" styleClass="label" stylesheets="@book_list_item.css"/>
-                <TextArea fx:id="descriptionArea"/>
+                <TextArea fx:id="descriptionArea" styleClass="text-Desc" stylesheets="@book_list_item.css"/>
             </children>
             <padding>
                 <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>

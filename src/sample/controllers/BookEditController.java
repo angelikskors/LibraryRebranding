@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.util.StringConverter;
 import sample.Book;
 import sample.Main;
 import sample.views.BookListItemView;
@@ -42,9 +44,37 @@ public class BookEditController implements Initializable {
     public void setBook(Book book) {
         nameField.textProperty().bindBidirectional(book.nameProperty());
         authorField.textProperty().bindBidirectional(book.authorProperty());
+        genreField.textProperty().bindBidirectional(book.genreProperty());
+
+        yearField.textProperty().bindBidirectional(book.yearProperty(), new StringConverter<Number>() {
+            @Override
+            public String toString(Number object) {
+                return String.valueOf(object);
+            }
+
+            @Override
+            public Number fromString(String string) {
+                return Integer.parseInt(string);
+            }
+        });
+
+        pagesField.textProperty().bindBidirectional(book.pageProperty(), new StringConverter<Number>() {
+            @Override
+            public String toString(Number object) {
+                return String.valueOf(object);
+            }
+
+            @Override
+            public Number fromString(String string) {
+                return Integer.parseInt(string);
+            }
+        });
+        descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
     }
 
     public void handleEdit(ActionEvent actionEvent) {
+        Window window = descriptionArea.getScene().getWindow();
+        window.hide();
 
     }
 }
