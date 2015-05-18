@@ -124,8 +124,8 @@ public class BookListItemView extends HBox {
 
     @FXML
     public void handleDownload(ActionEvent actionEvent) {
-
-        new DownloadFile(new BooksController().booksView.getSelectionModel().getSelectedItem().getPath());
+System.out.println("Start");
+        new DownloadFile(currentBook.getPath());
     }
 
     @FXML

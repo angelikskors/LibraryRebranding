@@ -55,17 +55,13 @@ public class MainWindowController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        showNewWindow("Base ", root);
 
-        Stage stage = new Stage();
-        stage.setTitle("Base");
-        Scene scene = new Scene(root, 820, 400);
-        stage.setScene(scene);
-        stage.show();
     }
     private void showNewWindow(String title, Parent root) {
         Stage stage = new Stage();
         stage.setTitle(title);
-        Scene scene = new Scene(root, 820, 400);
+        Scene scene = new Scene(root, 820, 430);
         stage.setScene(scene);
         stage.show();
     }

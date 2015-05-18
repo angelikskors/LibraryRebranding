@@ -3,7 +3,9 @@ package sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable{
 
     private String image;
     private String path;

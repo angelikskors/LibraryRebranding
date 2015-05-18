@@ -12,6 +12,7 @@ public DownloadFile(String url){
     new Thread(new Runnable() {
         @Override
         public void run() {
+            System.out.println("Started");
             String fileName = "file.txt"; //The file that will be saved on your computer
             URL link = null; //The file that you want to download
             try {
@@ -59,6 +60,6 @@ public DownloadFile(String url){
 
             System.out.println("Finished");
         }
-    });
+    }).start();
 
     }}

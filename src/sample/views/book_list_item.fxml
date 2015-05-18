@@ -11,9 +11,7 @@
                 prefWidth="600.0"
 
                 styleClass="background" stylesheets="@book_list_item.css">
-
-
-        <right>
+         <right>
 
             <VBox spacing="6">
                 <children>
@@ -29,7 +27,7 @@
                     <HBox spacing="6">
                         <children>
                             <Label text="%key_author" styleClass="label" stylesheets="@book_list_item.css"/>
-                            <TextField fx:id="authorField"/>
+                            <TextField minWidth="250" fx:id="authorField"/>
                         </children>
                         <padding>
                             <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
@@ -38,7 +36,7 @@
                     <HBox spacing="6">
                         <children>
                             <Label text="%key_genre" styleClass="label" stylesheets="@book_list_item.css"/>
-                            <TextField fx:id="genreField"/>
+                            <TextField minWidth="250" fx:id="genreField"/>
                         </children>
                         <padding>
                             <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
