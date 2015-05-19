@@ -30,6 +30,7 @@ public class BooksController implements Initializable {
                 return new BookListCell();
             }
         });
+
         booksView.setItems(Main.books);
     }
 }

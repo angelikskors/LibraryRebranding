@@ -94,6 +94,7 @@ public class BookEditController implements Initializable {
             Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText());
 
             Main.books.add(book);
+
             Window window = descriptionArea.getScene().getWindow();
             window.hide();
             System.out.println("Finished");

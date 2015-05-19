@@ -111,18 +111,7 @@ public class Book implements Serializable {
     }
 
     public void setDescription(String description) {
-        if (description.contains(".")) {
-            String[] desc = description.split("\\.");
-            String[] desc2 = new String[desc.length];
-            for (int i = 0; i < desc.length - 1; i++) {
-                desc2[i] = desc[i] + "\n";
-
-
-            }
-            this.description.set(Arrays.toString(desc2));
-        } else
-
-            this.description.set(description);
+        this.description.set(description);
     }
 
     public SimpleStringProperty nameProperty() {
@@ -138,7 +127,6 @@ public class Book implements Serializable {
     }
 
     public SimpleIntegerProperty yearProperty() {
-
         return year;
     }
 
@@ -147,7 +135,6 @@ public class Book implements Serializable {
     }
 
     public SimpleIntegerProperty popularityProperty() {
-
         return popularity;
     }
 
