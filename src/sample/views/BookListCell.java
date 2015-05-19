@@ -12,7 +12,7 @@ public class BookListCell extends ListCell<Book> {
     }
 
     @Override
-    protected void updateItem(Book item, boolean empty) {
+    public void updateItem(Book item, boolean empty) {
         super.updateItem(item, empty);
         if (item != null) {
             bookListItemView.setBook(item);

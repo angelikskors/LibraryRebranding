@@ -1,0 +1,86 @@
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.BookEditController" alignment="center">
+
+    <children>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_name" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextField minWidth="250" fx:id="nameField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_author" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextField fx:id="authorField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_genre" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextField fx:id="genreField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_year" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextField fx:id="yearField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_pages" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextField fx:id="pagesField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Label text="%key_description" styleClass="label" stylesheets="@book_list_item.css"/>
+                <TextArea fx:id="descriptionArea" styleClass="text-Desc" stylesheets="@book_list_item.css"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Button text="Choose file" onAction="#handleChoose" styleClass="little-button"
+                        stylesheets="@book_list_item.css"/>
+                <TextField fx:id="pathField"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Button text="Add book" onAction="#handleAdd" styleClass="little-button"
+                        stylesheets="@book_list_item.css"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+
+</VBox>

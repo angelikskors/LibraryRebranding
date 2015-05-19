@@ -4,9 +4,11 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
-public class Book implements Serializable{
+public class Book implements Serializable {
 
+    String element;
     private String image;
     private String path;
     private SimpleStringProperty name = new SimpleStringProperty("");
@@ -109,7 +111,18 @@ public class Book implements Serializable{
     }
 
     public void setDescription(String description) {
-        this.description.set(description);
+        if (description.contains(".")) {
+            String[] desc = description.split("\\.");
+            String[] desc2 = new String[desc.length];
+            for (int i = 0; i < desc.length - 1; i++) {
+                desc2[i] = desc[i] + "\n";
+
+
+            }
+            this.description.set(Arrays.toString(desc2));
+        } else
+
+            this.description.set(description);
     }
 
     public SimpleStringProperty nameProperty() {
@@ -138,5 +151,19 @@ public class Book implements Serializable{
         return popularity;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
 
+                ", image='" + image + '\'' +
+                ", path='" + path + '\'' +
+                ", name=" + name +
+                ", author=" + author +
+                ", genre=" + genre +
+                ", year=" + year +
+                ", page=" + page +
+                ", description=" + description +
+
+                '}';
+    }
 }

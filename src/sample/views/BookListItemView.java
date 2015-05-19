@@ -14,16 +14,15 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import sample.Book;
-import sample.DownloadFile;
-import sample.Main;
+import sample.utils.DownloadFile;
 import sample.controllers.BookEditController;
-import sample.controllers.BooksController;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
 
 public class BookListItemView extends HBox {
 
+    private static Book currentBook;
     @FXML
     private TextField nameField;
     @FXML
@@ -35,11 +34,10 @@ public class BookListItemView extends HBox {
     @FXML
     private TextField pagesField;
     @FXML
-    private TextArea descriptionArea;
-    @FXML
     private ImageView coverView;
-
-    private Book currentBook;
+    @FXML
+    private TextArea descriptionArea;
+    private PathScreen pathScreen;
 
     public BookListItemView() {
         FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_list_item.fxml");
@@ -50,6 +48,10 @@ public class BookListItemView extends HBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void download(String name) {
+        new DownloadFile(currentBook.getPath(), name);
     }
 
     public void setBook(Book book) {
@@ -81,17 +83,23 @@ public class BookListItemView extends HBox {
                 return Integer.parseInt(string);
             }
         });
+        if (currentBook.getImage() != null) {
+            addImage(currentBook);
+        }
         descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
 
-        if(currentBook.getImage()!=null){
-            Image image = new Image(currentBook.getImage());
-            coverView = new ImageView();
-            coverView.setFitWidth(150);
-            coverView.setFitHeight(170);
-            coverView.setImage(image);
-            setPadding(new Insets(10, 10, 10, 10));
-            getChildren().add(coverView);
-        }
+    }
+
+    private synchronized void addImage(Book currentBook) {
+
+
+        Image image = new Image(currentBook.getImage());
+
+        coverView.setFitWidth(150);
+        coverView.setFitHeight(170);
+        coverView.setImage(image);
+        setPadding(new Insets(10, 10, 10, 10));
+
 
     }
 
@@ -113,9 +121,6 @@ public class BookListItemView extends HBox {
 
     }
 
-
-
-
     @FXML
     public void handleAddRate(ActionEvent actionEvent) {
 
@@ -124,8 +129,17 @@ public class BookListItemView extends HBox {
 
     @FXML
     public void handleDownload(ActionEvent actionEvent) {
-System.out.println("Start");
-        new DownloadFile(currentBook.getPath());
+
+        if (currentBook.getPath() == null) {
+            Image image = new Image("file:questions.jpg");
+            ErrorScreen root = new ErrorScreen("Nothing to download!", image);
+            showNewWindow("Error", root);
+        } else {
+            pathScreen = new PathScreen("Please, enter the name for file");
+            showNewWindow("Info", pathScreen);
+        }
+
+
     }
 
     @FXML

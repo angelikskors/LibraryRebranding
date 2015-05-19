@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import sample.Main;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
@@ -28,10 +27,11 @@ public class MainWindowController implements Initializable {
 
 
     }
+
     @FXML
-    public void handleAddNew(){
+    public void handleAddNew() {
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_edit.fxml",resources);
+        FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_add.fxml", resources);
 
         Parent root1 = null;
         try {
@@ -58,10 +58,11 @@ public class MainWindowController implements Initializable {
         showNewWindow("Base ", root);
 
     }
-    private void showNewWindow(String title, Parent root) {
+
+    public void showNewWindow(String title, Parent root) {
         Stage stage = new Stage();
         stage.setTitle(title);
-        Scene scene = new Scene(root, 820, 430);
+        Scene scene = new Scene(root, 660, 520);
         stage.setScene(scene);
         stage.show();
     }
@@ -73,5 +74,15 @@ public class MainWindowController implements Initializable {
 
     @FXML
     public void handleContactUs(ActionEvent actionEvent) {
+        ResourceBundle resources = FXMLHelper.resources();
+        FXMLLoader loader = FXMLHelper.loader("views/email.fxml", resources);
+
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        showNewWindow("Send us a message", root);
     }
 }
