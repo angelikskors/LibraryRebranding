@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import sample.utils.JavaMail;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +19,7 @@ public class BookEmailController implements Initializable {
     @FXML
     private TextArea messageArea;
 
+    private final String serviceAddress = "servcie@gmail.com";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,8 +28,25 @@ public class BookEmailController implements Initializable {
 
     @FXML
     public void handleSend(ActionEvent actionEvent) {
-        if (nameUser != null & emailField != null & messageArea != null) {
-            JavaMail javaMail = new JavaMail(nameUser.getText(), emailField.getText(), messageArea.getText());
+        String subject = nameUser.getText();
+        String text = messageArea.getText();
+        if (subject.length() != 0 && text.length() != 0 ) {
+            String command = "cmd.exe /c start \"\" \"" + mailToString(subject, text) + "\"";
+            try {
+                Runtime.getRuntime().exec(command);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    private String mailToString(String subject, String body) {
+        StringBuilder builder = new StringBuilder("mailto:");
+        builder.append(serviceAddress);
+        builder.append("?");
+        builder.append("subject=").append(subject.replaceAll(" ", "%20"));
+        builder.append("&");
+        builder.append("body=").append(body.replaceAll(" ", "%20"));
+        return builder.toString();
     }
 }
