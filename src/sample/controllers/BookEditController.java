@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.StringConverter;
 import sample.Book;
+import sample.Main;
 import sample.views.ErrorScreen;
 
 import java.io.File;
@@ -92,7 +93,7 @@ public class BookEditController implements Initializable {
         } else {
             Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText());
 
-            new BooksController().addNewBook(book);
+            Main.books.add(book);
             Window window = descriptionArea.getScene().getWindow();
             window.hide();
             System.out.println("Finished");
