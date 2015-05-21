@@ -160,10 +160,11 @@ public class Book implements Externalizable {
         out.writeUTF(genre.get());
         out.writeUTF(name.get());
         out.writeUTF(author.get());
-        out.writeUTF(String.valueOf(year.get()));
-        out.writeUTF(String.valueOf(page.get()));
+        out.writeInt(year.get());
+        out.writeInt(page.get());
+        out.writeUTF(String.valueOf(path));
         out.writeUTF(description.get());
-        out.writeUTF(System.lineSeparator());
+
 
     }
 
@@ -172,8 +173,9 @@ public class Book implements Externalizable {
         genre.set(in.readUTF());
         name.set(in.readUTF());
         author.set(in.readUTF());
-        year.set(Integer.parseInt(in.readUTF()));
-        page.set(Integer.parseInt(in.readUTF()));
+        year.set(in.readInt());
+        page.set(in.readInt());
+        setPath(in.readLine());
         description.set(in.readUTF());
 
     }

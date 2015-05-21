@@ -8,14 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.utils.FXMLHelper;
+import sample.views.BookListItemView;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main extends Application {
 
     public static final ObservableList<Book> books = FXCollections.observableArrayList();
+    static ArrayList<Book> list = new ArrayList();
 
     static {
         String str = "D://text.txt";
@@ -24,24 +28,45 @@ public class Main extends Application {
             if (file.isFile()) {
                 FileInputStream input = null;
                 ObjectInputStream inputStream = null;
+                BufferedInputStream bf = null;
 
                 try {
                     input = new FileInputStream(file);
                     inputStream = new ObjectInputStream(input);
-
+                    int length = 0;
                     try {
-                        inputStream.readObject();
-                        int length = inputStream.readInt();
+                        length = inputStream.readInt();
                         for (int i = 0; i < length; i++) {
-                            Main.books.add((Book) inputStream.readObject());
+                            books.add((Book) inputStream.readObject());
                         }
-
-                    } catch (ClassNotFoundException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    inputStream.read();
+
+                    //       inputStream.readInt();
+//
+                    //   for (Book book : Main.books) {
+                    //       inputStream.readObject();
+                    //    }
+
+
+                    inputStream.close();
+
+//                    inputStream = new ObjectInputStream(input);
+//list=(ArrayList)inputStream.readObject();
+//                    books.add((Book) inputStream.readObject());
+
+                } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    inputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
