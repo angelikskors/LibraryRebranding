@@ -14,11 +14,12 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import sample.Book;
+import sample.Main;
 import sample.controllers.BookEditController;
 import sample.utils.DownloadFile;
 import sample.utils.FXMLHelper;
 
-import java.io.IOException;
+import java.io.*;
 
 public class BookListItemView extends HBox {
 
@@ -55,6 +56,8 @@ public class BookListItemView extends HBox {
     }
 
     public void setBook(Book book) {
+
+
         currentBook = book;
         nameField.textProperty().bindBidirectional(book.nameProperty());
         authorField.textProperty().bindBidirectional(book.authorProperty());

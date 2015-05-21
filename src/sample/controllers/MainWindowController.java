@@ -70,6 +70,7 @@ public class MainWindowController {
 
     @FXML
     public void handleService(ActionEvent actionEvent) {
+        //TODO add new function , which gives user an opportunity to make choice faster
 
     }
 
@@ -102,11 +103,11 @@ public class MainWindowController {
             FileOutputStream outf = new FileOutputStream(base, false);
 
             ObjectOutputStream out = new ObjectOutputStream(outf);
+            out.writeInt(Main.books.size());
             for (Book book : Main.books) {
                 out.writeObject(book);
+
             }
-
-
             out.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
