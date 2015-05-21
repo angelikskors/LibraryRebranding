@@ -92,27 +92,26 @@ public class MainWindowController {
         System.out.println("Started");
         String str = "D://text.txt";
         File base = new File(str);
-        if (!base.exists()) {
-            try {
-                base.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        ObjectOutputStream out = null;
         try {
-            FileOutputStream outf = new FileOutputStream(base, false);
+            FileOutputStream fos = new FileOutputStream(base, false);
 
-            ObjectOutputStream out = new ObjectOutputStream(outf);
+            out = new ObjectOutputStream(fos);
             out.writeInt(Main.books.size());
             for (Book book : Main.books) {
                 out.writeObject(book);
-
             }
             out.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            if(out != null){
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         System.out.println("Finished");

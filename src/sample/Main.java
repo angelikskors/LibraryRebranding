@@ -8,11 +8,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.utils.FXMLHelper;
-import sample.views.BookListItemView;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -26,49 +27,29 @@ public class Main extends Application {
         File file = new File(str);
         if (file.exists()) {
             if (file.isFile()) {
-                FileInputStream input = null;
-                ObjectInputStream inputStream = null;
-                BufferedInputStream bf = null;
 
+                ObjectInputStream ois = null;
                 try {
-                    input = new FileInputStream(file);
-                    inputStream = new ObjectInputStream(input);
-                    int length = 0;
-                    try {
-                        length = inputStream.readInt();
-                        for (int i = 0; i < length; i++) {
-                            books.add((Book) inputStream.readObject());
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    FileInputStream fis = new FileInputStream(file);
+                    ois = new ObjectInputStream(fis);
+                    int length = ois.readInt();
+                    for (int i = 0; i < length; i++) {
+                        Book book = (Book) ois.readObject();
+                        books.add(book);
                     }
-
-                    //       inputStream.readInt();
-//
-                    //   for (Book book : Main.books) {
-                    //       inputStream.readObject();
-                    //    }
-
-
-                    inputStream.close();
-
-//                    inputStream = new ObjectInputStream(input);
-//list=(ArrayList)inputStream.readObject();
-//                    books.add((Book) inputStream.readObject());
-
+                    ois.close();
                 } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-
-
-                } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } finally {
+                    if (ois != null) {
+                        try {
+                            ois.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         } else {
