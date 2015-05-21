@@ -164,6 +164,7 @@ public class Book implements Externalizable {
         out.writeInt(page.get());
         out.writeUTF(getPath());
         out.writeUTF(description.get());
+        out.writeUTF(getImage());
 
 
     }
@@ -177,6 +178,7 @@ public class Book implements Externalizable {
         page.set(in.readInt());
         setPath(in.readUTF());
         description.set(in.readUTF());
+        setImage(in.readUTF());
 
     }
 }
