@@ -1,7 +1,5 @@
 package sample.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
@@ -10,7 +8,6 @@ import javafx.util.Callback;
 import sample.Book;
 import sample.Main;
 import sample.views.BookListCell;
-import sample.views.BookListItemView;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -14,8 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import sample.Book;
-import sample.utils.DownloadFile;
 import sample.controllers.BookEditController;
+import sample.utils.DownloadFile;
 import sample.utils.FXMLHelper;
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class BookListItemView extends HBox {
     private PathScreen pathScreen;
 
     public BookListItemView() {
-        FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_list_item.fxml");
+        FXMLLoader fxmlLoader = FXMLHelper.loader("fxml/book_list_item.fxml");
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {
@@ -107,7 +107,7 @@ public class BookListItemView extends HBox {
     public void handleEdit(ActionEvent actionEvent) {
         if (currentBook != null) {
             try {
-                FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_edit.fxml");
+                FXMLLoader fxmlLoader = FXMLHelper.loader("fxml/book_edit.fxml");
                 Parent root = fxmlLoader.load();
                 BookEditController controller =
                         fxmlLoader.getController();

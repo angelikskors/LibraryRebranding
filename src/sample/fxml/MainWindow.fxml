@@ -13,10 +13,11 @@
             prefHeight="400.0"
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8"
-            fx:controller="sample.controllers.MainWindowController" styleClass="background" stylesheets="@style.css">
+            fx:controller="sample.controllers.MainWindowController" styleClass="background"
+            stylesheets="@../css/style.css">
     <top>
         <Label text=" Welcome to The Cloud Library "
-               BorderPane.alignment="CENTER" styleClass="welcome-label" stylesheets="@style.css">
+               BorderPane.alignment="CENTER" styleClass="welcome-label" stylesheets="@../css/style.css">
             <font>
                 <Font name="System Bold Italic"/>
             </font>
@@ -27,18 +28,26 @@
     <left>
         <VBox spacing="20.0">
             <children>
-                <Button text="Base" onAction="#handleBase" styleClass="button" stylesheets="@style.css"/>
-                <Button text="Add book " onAction="#handleAddNew" styleClass="button" stylesheets="@style.css"/>
-                <Button text="Service" onAction="#handleService" styleClass="button" stylesheets="@style.css"/>
-                <Button text="Contact us " onAction="#handleContactUs" styleClass="button" stylesheets="@style.css"/>
+                <Button text="Base" onAction="#handleBase" styleClass="button" stylesheets="@../css/style.css"/>
+                <Button text="Add book " onAction="#handleAddNew" styleClass="button" stylesheets="@../css/style.css"/>
+                <Button text="Service" onAction="#handleService" styleClass="button" stylesheets="@../css/style.css"/>
+                <Button text="Contact us " onAction="#handleContactUs" styleClass="button"
+                        stylesheets="@../css/style.css"/>
             </children>
         </VBox>
     </left>
+    <right>
+        <VBox spacing="20.0">
+            <children>
+                <Button text="Upload" onAction="#handleUpdateBase" styleClass="button" stylesheets="@../css/style.css"/>
+            </children>
+        </VBox>
+    </right>
     <center>
         <ImageView fx:id="img" layoutX="29.0" layoutY="44.0" fitHeight="224.0" fitWidth="400.0" pickOnBounds="true"
                    preserveRatio="true">
             <image>
-                <Image url="@bookInCloud.png"/>
+                <Image url="@../views/bookInCloud.png"/>
             </image>
         </ImageView>
     </center>

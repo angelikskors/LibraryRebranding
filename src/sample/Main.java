@@ -38,10 +38,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(new Locale("", ""));
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader loader = FXMLHelper.loader("views/MainWindow.fxml");
+        FXMLLoader loader = FXMLHelper.loader("fxml/MainWindow.fxml");
         Parent root = loader.load();
         primaryStage.setTitle(resources.getString("key_title"));
-        root.getStyleClass().add("sample.views.style.css");
+        root.getStyleClass().add("sample.css.style.css");
         primaryStage.setScene(new Scene(root, 730, 420));
         primaryStage.show();
     }

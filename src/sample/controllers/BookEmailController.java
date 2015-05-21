@@ -12,14 +12,13 @@ import java.util.ResourceBundle;
 
 
 public class BookEmailController implements Initializable {
+    private final String serviceAddress = "servcie@gmail.com";
     @FXML
     private TextField nameUser;
     @FXML
     private TextField emailField;
     @FXML
     private TextArea messageArea;
-
-    private final String serviceAddress = "servcie@gmail.com";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -30,7 +29,7 @@ public class BookEmailController implements Initializable {
     public void handleSend(ActionEvent actionEvent) {
         String subject = nameUser.getText();
         String text = messageArea.getText();
-        if (subject.length() != 0 && text.length() != 0 ) {
+        if (subject.length() != 0 && text.length() != 0) {
             String command = "cmd.exe /c start \"\" \"" + mailToString(subject, text) + "\"";
             try {
                 Runtime.getRuntime().exec(command);

@@ -3,10 +3,13 @@ package sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-import java.io.Serializable;
-import java.util.Arrays;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
-public class Book implements Serializable {
+public class Book implements Externalizable {
+
 
     String element;
     private String image;
@@ -140,17 +143,37 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" +
-
-                ", image='" + image + '\'' +
-                ", path='" + path + '\'' +
-                ", name=" + name +
-                ", author=" + author +
-                ", genre=" + genre +
-                ", year=" + year +
-                ", page=" + page +
-                ", description=" + description +
+        return "Book " +
+                " genre=" + getGenre() +
+                ", name=" + getName() +
+                ", author=" + getAuthor() +
+                ", year=" + getYear() +
+                ", page=" + getPage() + ", path='" + getPath() +
+                ", description=" + getDescription()
+                +
 
                 '}';
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeUTF(genre.get());
+        out.writeUTF(name.get());
+        out.writeUTF(author.get());
+        out.writeUTF(String.valueOf(year.get()));
+        out.writeUTF(String.valueOf(page.get()));
+        out.writeUTF(description.get());
+
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        genre.set(in.readUTF());
+        name.set(in.readUTF());
+        author.set(in.readUTF());
+        year.set(Integer.parseInt(in.readUTF()));
+        page.set(Integer.parseInt(in.readUTF()));
+        description.set(in.readUTF());
+
     }
 }

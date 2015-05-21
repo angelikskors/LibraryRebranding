@@ -3,23 +3,24 @@ package sample.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import sample.Book;
+import sample.Main;
 import sample.utils.FXMLHelper;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainWindowController implements Initializable {
+public class MainWindowController {
     @FXML
     private ImageView img;
 
-    @Override
+
     public void initialize(URL location, ResourceBundle resources) {
         Image image = new Image("file: bookInCloud.png");
         img = new ImageView();
@@ -31,7 +32,7 @@ public class MainWindowController implements Initializable {
     @FXML
     public void handleAddNew() {
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader fxmlLoader = FXMLHelper.loader("views/book_add.fxml", resources);
+        FXMLLoader fxmlLoader = FXMLHelper.loader("fxml/book_add.fxml", resources);
 
         Parent root1 = null;
         try {
@@ -47,7 +48,7 @@ public class MainWindowController implements Initializable {
     @FXML
     public void handleBase(ActionEvent actionEvent) {
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader loader = FXMLHelper.loader("views/books_window.fxml", resources);
+        FXMLLoader loader = FXMLHelper.loader("fxml/books_window.fxml", resources);
 
         Parent root = null;
         try {
@@ -75,7 +76,7 @@ public class MainWindowController implements Initializable {
     @FXML
     public void handleContactUs(ActionEvent actionEvent) {
         ResourceBundle resources = FXMLHelper.resources();
-        FXMLLoader loader = FXMLHelper.loader("views/email.fxml", resources);
+        FXMLLoader loader = FXMLHelper.loader("fxml/email.fxml", resources);
 
         Parent root = null;
         try {
@@ -84,5 +85,35 @@ public class MainWindowController implements Initializable {
             e.printStackTrace();
         }
         showNewWindow("Send us a message", root);
+    }
+
+    public void handleUpdateBase(ActionEvent actionEvent) {
+        System.out.println("Started");
+        String str = "D://text.txt";
+        File base = new File(str);
+        if (!base.exists()) {
+            try {
+                base.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            FileOutputStream outf = new FileOutputStream(base, false);
+
+            ObjectOutputStream out = new ObjectOutputStream(outf);
+            for (Book book : Main.books) {
+                out.writeObject(book);
+            }
+
+
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Finished");
     }
 }
