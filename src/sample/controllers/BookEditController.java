@@ -15,6 +15,7 @@ import sample.Main;
 import sample.views.ErrorScreen;
 
 import java.io.File;
+import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -39,21 +40,6 @@ public class BookEditController implements Initializable {
     @FXML
     private TextArea descriptionArea;
     private File currentOpenFile;
-
-    static String slash2sep(String src) {
-        int i;
-        char[] chDst = new char[src.length()];
-        String dst;
-
-        for (i = 0; i < src.length(); i++) {
-            if (src.charAt(i) == '\\')
-                chDst[i] = '\\';
-            else
-                chDst[i] = src.charAt(i);
-        }
-        dst = new String(chDst);
-        return dst;
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -138,7 +124,7 @@ public class BookEditController implements Initializable {
     }
 
     @FXML
-    public boolean handleChooseImage(ActionEvent actionEvent) {
+    public void handleChooseImage(ActionEvent actionEvent) {
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
@@ -146,10 +132,10 @@ public class BookEditController implements Initializable {
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", "*.jpg", "*.gif", "*.png"));
         currentOpenFile = fileChooser.showOpenDialog(stage);
         if (currentOpenFile != null) {
-            pathFieldForImage.setText("file:" + slash2sep(currentOpenFile.getAbsolutePath()));
+            File absoluteFile = currentOpenFile.getAbsoluteFile();
+            pathFieldForImage.setText(absoluteFile.toURI().toString());
 
         }
-        return false;
     }
 
 
