@@ -118,7 +118,7 @@ public class BookEditController implements Initializable {
             new MainWindowController().showNewWindow("Error", screen);
 
         } else {
-            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText(), pathFieldForImage.toString());
+            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText(), pathFieldForImage.getText());
 
             Main.books.add(book);
 
