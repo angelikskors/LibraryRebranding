@@ -1,0 +1,61 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.BookServiceController" alignment="center" spacing="10">
+    <children>
+        <HBox spacing="6">
+            <children>
+                <Label text="Hesitating what book to choose?"/>
+                <Label text=" Enter 4 titles of the books below and we will help you!"
+                        />
+
+            </children>
+
+        </HBox>
+        <HBox spacing="6">
+            <children>
+
+                <TextField minWidth="250" fx:id="bookFirst"/>
+            </children>
+
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <TextField fx:id="bookSecond"/>
+            </children>
+
+        </HBox>
+        <HBox spacing="6">
+            <children>
+
+                <TextField fx:id="bookThird"/>
+            </children>
+
+        </HBox>
+        <HBox spacing="6">
+            <children>
+
+                <TextField fx:id="bookForth"/>
+            </children>
+
+        </HBox>
+
+        <HBox spacing="6">
+            <children>
+                <Button text="Receive answer" onAction="#handleMakeChoice" styleClass="little-button"
+                        stylesheets="@../css/book_list_item.css"/>
+
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+
+
+    </children>
+    <padding>
+        <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+    </padding>
+
+</VBox>

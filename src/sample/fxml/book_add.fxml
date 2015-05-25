@@ -3,7 +3,6 @@
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="sample.controllers.BookEditController" alignment="center">
-
     <children>
         <HBox spacing="6">
             <children>
@@ -54,6 +53,16 @@
             <children>
                 <Label text="%key_description" styleClass="label" stylesheets="@../css/book_list_item.css"/>
                 <TextArea fx:id="descriptionArea" styleClass="text-Desc" stylesheets="@../css/book_list_item.css"/>
+            </children>
+            <padding>
+                <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>
+            </padding>
+        </HBox>
+        <HBox spacing="6">
+            <children>
+                <Button text="Choose image" onAction="#handleChooseImage" styleClass="little-button"
+                        stylesheets="@../css/book_list_item.css"/>
+                <TextField fx:id="pathFieldForImage"/>
             </children>
             <padding>
                 <javafx.geometry.Insets top="6" left="6" right="6" bottom="6"/>

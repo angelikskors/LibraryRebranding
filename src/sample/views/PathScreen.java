@@ -10,9 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
-/**
- * Created by PC Kors on 19.05.2015.
- */
+
 public class PathScreen extends VBox {
     private String msg;
     private VBox vBox;
@@ -46,9 +44,9 @@ public class PathScreen extends VBox {
             public void handle(ActionEvent event) {
                 if (textField.getText() != null) {
                     if (textField.getText().contains(".txt")) {
-                        BookListItemView.download(textField.getText());
+                        new BookListItemView().download(textField.getText());
                     } else {
-                        BookListItemView.download(textField.getText() + ".txt");
+                        new BookListItemView().download(textField.getText() + ".txt");
                     }
                     Window window = textField.getScene().getWindow();
                     window.hide();

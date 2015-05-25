@@ -24,6 +24,8 @@ public class BookEditController implements Initializable {
     @FXML
     public TextField authorField;
     @FXML
+    public TextField pathFieldForImage;
+    @FXML
     private TextField nameField;
 
     @FXML
@@ -38,12 +40,25 @@ public class BookEditController implements Initializable {
     private TextArea descriptionArea;
     private File currentOpenFile;
 
+    static String slash2sep(String src) {
+        int i;
+        char[] chDst = new char[src.length()];
+        String dst;
+
+        for (i = 0; i < src.length(); i++) {
+            if (src.charAt(i) == '\\')
+                chDst[i] = '\\';
+            else
+                chDst[i] = src.charAt(i);
+        }
+        dst = new String(chDst);
+        return dst;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
 
     public void setBook(Book book) {
         nameField.textProperty().bindBidirectional(book.nameProperty());
@@ -74,6 +89,7 @@ public class BookEditController implements Initializable {
             }
         });
         descriptionArea.textProperty().bindBidirectional(book.descriptionProperty());
+        pathFieldForImage.textProperty().bindBidirectional(book.imageProperty());
     }
 
     public void handleEdit(ActionEvent actionEvent) {
@@ -91,7 +107,7 @@ public class BookEditController implements Initializable {
             new MainWindowController().showNewWindow("Error", screen);
 
         } else {
-            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText());
+            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText(), pathFieldForImage.toString());
 
             Main.books.add(book);
 
@@ -120,6 +136,24 @@ public class BookEditController implements Initializable {
 
 
     }
+
+    @FXML
+    public boolean handleChooseImage(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image File");
+
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", "*.jpg", "*.gif", "*.png"));
+        currentOpenFile = fileChooser.showOpenDialog(stage);
+        if (currentOpenFile != null) {
+            pathFieldForImage.setText("file:" + slash2sep(currentOpenFile.getAbsolutePath()));
+
+        }
+        return false;
+    }
+
+
+
 }
 
 

@@ -12,7 +12,10 @@ import sample.Book;
 import sample.Main;
 import sample.utils.FXMLHelper;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -70,7 +73,17 @@ public class MainWindowController {
 
     @FXML
     public void handleService(ActionEvent actionEvent) {
-        //TODO add new function , which gives user an opportunity to make choice faster
+        ResourceBundle resources = FXMLHelper.resources();
+        FXMLLoader loader = FXMLHelper.loader("fxml/book_service.fxml", resources);
+
+        Parent root = null;
+        try {
+            root = loader.load();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        showNewWindow("Service ", root);
 
     }
 
@@ -104,8 +117,8 @@ public class MainWindowController {
             out.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(out != null){
+        } finally {
+            if (out != null) {
                 try {
                     out.close();
                 } catch (IOException e) {

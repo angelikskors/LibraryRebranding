@@ -14,16 +14,16 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import sample.Book;
-import sample.Main;
 import sample.controllers.BookEditController;
+import sample.controllers.BookEstimaterController;
 import sample.utils.DownloadFile;
 import sample.utils.FXMLHelper;
 
-import java.io.*;
+import java.io.IOException;
 
 public class BookListItemView extends HBox {
 
-    private static Book currentBook;
+    public Book currentBook;
     @FXML
     private TextField nameField;
     @FXML
@@ -51,7 +51,8 @@ public class BookListItemView extends HBox {
         }
     }
 
-    public static void download(String name) {
+    public void download(String name) {
+
         new DownloadFile(currentBook.getPath(), name);
     }
 
@@ -127,8 +128,22 @@ public class BookListItemView extends HBox {
     @FXML
     public void handleAddRate(ActionEvent actionEvent) {
 
+        FXMLLoader fxmlLoader = FXMLHelper.loader("fxml/book_estimate.fxml");
+        Parent root = null;
+
+        try {
+            root = fxmlLoader.load();
+            BookEstimaterController controller =
+                    fxmlLoader.getController();
+            controller.addToList(currentBook);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        showNewWindow("Estimation", root);
 
     }
+
 
     @FXML
     public void handleDownload(ActionEvent actionEvent) {

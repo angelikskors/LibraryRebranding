@@ -12,7 +12,7 @@ public class Book implements Externalizable {
 
 
     String element;
-    private String image;
+
     private String path;
     private SimpleStringProperty name = new SimpleStringProperty("");
     private SimpleStringProperty author = new SimpleStringProperty("");
@@ -21,6 +21,7 @@ public class Book implements Externalizable {
     private SimpleIntegerProperty page = new SimpleIntegerProperty();
     private SimpleStringProperty description = new SimpleStringProperty("");
     private SimpleIntegerProperty popularity = new SimpleIntegerProperty();
+    private SimpleStringProperty image = new SimpleStringProperty("");
 
     public Book(String genre, String name, String author, int year, int page, String path) {
         setGenre(genre);
@@ -65,11 +66,11 @@ public class Book implements Externalizable {
     }
 
     public String getImage() {
-        return image;
+        return image.get();
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.image.set(image);
     }
 
     public String getName() {
@@ -140,6 +141,10 @@ public class Book implements Externalizable {
         return description;
     }
 
+    public SimpleStringProperty imageProperty() {
+        return image;
+    }
+
     public SimpleIntegerProperty popularityProperty() {
         return popularity;
     }
@@ -164,7 +169,7 @@ public class Book implements Externalizable {
         out.writeInt(page.get());
         out.writeUTF(getPath());
         out.writeUTF(description.get());
-        out.writeUTF(getImage());
+        out.writeUTF(image.get());
 
 
     }
@@ -178,7 +183,7 @@ public class Book implements Externalizable {
         page.set(in.readInt());
         setPath(in.readUTF());
         description.set(in.readUTF());
-        setImage(in.readUTF());
+        image.set(in.readUTF());
 
     }
 }

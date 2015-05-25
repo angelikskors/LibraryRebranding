@@ -1,0 +1,46 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.controllers.BookEstimaterController"
+          maxHeight="Infinity"
+          maxWidth="Infinity"
+          minHeight="-Infinity"
+          minWidth="-Infinity"
+          prefWidth="600.0" hgap="60"
+          vgap="60"
+          xmlns="http://javafx.com/javafx/8" alignment="center">
+
+    <children>
+        <VBox spacing="10">
+            <children>
+
+                <Label fx:id="firstCriteria" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="chooser" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+
+                <Label fx:id="secondCriteria" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="chooser2" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+
+                <Label fx:id="thirdCriteria" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <ComboBox fx:id="chooser3" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+
+                <Label fx:id="forthCriteria" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="chooser4" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+
+                <Label fx:id="fifthCriteria" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                <ComboBox fx:id="chooser5" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+
+
+                <Button text="OK" GridPane.rowIndex="2" GridPane.columnIndex="5" onAction="#handleOk"/>
+
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets left="10" right="10" top="10" bottom="10"/>
+    </padding>
+</GridPane>
