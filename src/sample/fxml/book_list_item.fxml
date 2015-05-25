@@ -50,7 +50,7 @@
                 <children>
                     <Button text="Edit" onAction="#handleEdit" styleClass="little-button"
                             stylesheets="@../css/book_list_item.css"/>
-                    <Button text="Add Comment" onAction="#handleAddRate" styleClass="little-button"
+                    <Button text="Add Your opinion" onAction="#handleAddRate" styleClass="little-button"
                             stylesheets="@../css/book_list_item.css"/>
                     <Button text="Download" onAction="#handleDownload" styleClass="little-button"
                             stylesheets="@../css/book_list_item.css"/>

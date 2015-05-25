@@ -133,6 +133,7 @@ public class BookEditController implements Initializable {
         currentOpenFile = fileChooser.showOpenDialog(stage);
         if (currentOpenFile != null) {
             File absoluteFile = currentOpenFile.getAbsoluteFile();
+            System.out.println(absoluteFile.toURI().toString());
             pathFieldForImage.setText(absoluteFile.toURI().toString());
 
         }
