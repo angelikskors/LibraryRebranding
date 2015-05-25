@@ -1,11 +1,13 @@
 package sample.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -15,7 +17,6 @@ import sample.Main;
 import sample.views.ErrorScreen;
 
 import java.io.File;
-import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,6 +45,30 @@ public class BookEditController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        yearField.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent t) {
+                char ar[] = t.getCharacter().toCharArray();
+                char ch = ar[t.getCharacter().toCharArray().length - 1];
+                if (!(ch >= '0' && ch <= '9')) {
+                    System.out.println("The char you entered is not a number");
+                    t.consume();
+                } else if (yearField.getText().length() >= 4) {
+                    System.out.println("Year string to long");
+                    t.consume();
+                }
+            }
+        });
+
+        pagesField.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent t) {
+                char ar[] = t.getCharacter().toCharArray();
+                char ch = ar[t.getCharacter().toCharArray().length - 1];
+                if (!(ch >= '0' && ch <= '9')) {
+                    System.out.println("The char you entered is not a number");
+                    t.consume();
+                }
+            }
+        });
     }
 
     public void setBook(Book book) {
@@ -87,13 +112,13 @@ public class BookEditController implements Initializable {
     public void handleAdd(ActionEvent actionEvent) {
 
 
-        if (String.valueOf(yearField.getText()) == null | String.valueOf(pagesField.getText()) == null) {
+        if (yearField.getText() == null | pagesField.getText() == null) {
             Image img = new Image("file:questions.jpg");
             ErrorScreen screen = new ErrorScreen("Invalid Format", img);
             new MainWindowController().showNewWindow("Error", screen);
 
         } else {
-            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText(), pathFieldForImage.toString());
+            Book book = new Book(nameField.getText(), authorField.getText(), genreField.getText(), parseInt(yearField.getText()), parseInt(pagesField.getText()), pathField.getText(), descriptionArea.getText(), pathFieldForImage.getText());
 
             Main.books.add(book);
 
@@ -138,7 +163,6 @@ public class BookEditController implements Initializable {
 
         }
     }
-
 
 
 }
