@@ -1,11 +1,18 @@
 package sample.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import sample.Book;
 import sample.Main;
+import sample.utils.FXMLHelper;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
 import java.util.ResourceBundle;
@@ -30,6 +37,7 @@ public class BookServiceController implements Initializable {
     public TextField bookSecond;
     public TextField bookThird;
     public TextField bookForth;
+
     double rate1;
     double rate2;
     double rate3;
@@ -38,44 +46,46 @@ public class BookServiceController implements Initializable {
 
     public void handleMakeChoice(ActionEvent actionEvent) {
 
-        Book[] bookss = new Book[Main.books.toArray().length];
-        for (int i = 0; i < bookss.length; i++) {
-            bookss[i] = (Book) Main.books.toArray()[i];
-        }
-        for (int i = 0; i < bookss.length; i++) {
-            if (bookFirst.getText().equals(bookss[i].getName())) {
-                rate1 = new BookEstimaterController().averages.get(bookss[i].getName().hashCode());
-                tm.put(rate1, bookss[i].getName());
-            } else {
-                System.out.println("Not found book");
-            }
-            if (bookSecond.getText().equals(bookss[i].getName())) {
-                rate2 = new BookEstimaterController().averages.get(bookss[i].getName().hashCode());
-                tm.put(rate2, bookss[i].getName());
-            } else {
-                System.out.println("Not found book");
-            }
-            if (bookThird.getText().equals(bookss[i].getName())) {
-                rate3 = new BookEstimaterController().averages.get(bookss[i].getName().hashCode());
-                tm.put(rate3, bookss[i].getName());
-            } else {
-                System.out.println("Not found book");
-            }
-            if (bookForth.getText().equals(bookss[i].getName())) {
-                rate4 = new BookEstimaterController().averages.get(bookss[i].getName().hashCode());
-                tm.put(rate4, bookss[i].getName());
-            } else {
-                System.out.println("Not found book");
-            }
-        }
+        for (Book book : Main.books) {
+  
+            if (bookFirst.getText().equals(book.getName())) {
+                rate1 = book.getPopularity();
 
-        System.out.println(tm.get(tm.firstKey()));
+                tm.put(rate1, book.getName());
+            }
+            if (bookSecond.getText().equals(book.getName())) {
+                rate2 = book.getPopularity();
+                System.out.println(rate2);
+                tm.put(rate2, book.getName());
+            }
+
+        }
+        if (tm.firstKey() != 0) {
+            try {
+                FXMLLoader fxmlLoader = FXMLHelper.loader("fxml/book_choice.fxml");
+                Parent root = fxmlLoader.load();
+                BookChoiceController controller =
+                        fxmlLoader.getController();
+                controller.setNameOfThebook(tm.get(tm.firstKey()));
+                showNewWindow("Choice", root);
+            } catch (IOException e) {
+                e.printStackTrace();
+        }
+            System.out.println(tm.get(tm.firstKey()));
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
 
+    }
+
+    private void showNewWindow(String title, Parent root) {
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }

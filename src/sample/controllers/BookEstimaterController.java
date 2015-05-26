@@ -20,7 +20,7 @@ public class BookEstimaterController implements Initializable {
     public ComboBox chooser3;
     public ComboBox chooser4;
     public ComboBox chooser5;
-    public LinkedHashMap<Integer, Double> averages = new LinkedHashMap<Integer, Double>();
+
     public Label thirdCriteria;
     public Label forthCriteria;
     public Label fifthCriteria;
@@ -65,6 +65,7 @@ public class BookEstimaterController implements Initializable {
         scores.add(Integer.parseInt(chooser3.getValue().toString()));
         scores.add(Integer.parseInt(chooser4.getValue().toString()));
         scores.add(Integer.parseInt(chooser5.getValue().toString()));
+        book.setPopularity(averageCount(scores));
         Window window = chooser5.getScene().getWindow();
         window.hide();
 
@@ -73,8 +74,7 @@ public class BookEstimaterController implements Initializable {
 
     public void addToList(Book book) {
         this.book = book;
-        System.out.print(this.book.getName());
-        averages.put(this.book.getName().hashCode(), averageCount(scores));
+
 
     }
 

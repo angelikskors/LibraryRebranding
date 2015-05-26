@@ -1,0 +1,24 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.BookChoiceController" alignment="center" spacing="10">
+    <children>
+        <HBox spacing="6">
+            <children>
+                <Label text="The name of the book you would enjoy"/>
+
+
+            </children>
+
+        </HBox>
+        <HBox spacing="6">
+            <children>
+
+                <Label fx:id="nameOfTheBook"/>
+
+            </children>
+
+        </HBox>
+    </children>
+</VBox>

@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -20,7 +21,7 @@ public class Book implements Externalizable {
     private SimpleIntegerProperty year = new SimpleIntegerProperty();
     private SimpleIntegerProperty page = new SimpleIntegerProperty();
     private SimpleStringProperty description = new SimpleStringProperty("");
-    private SimpleIntegerProperty popularity = new SimpleIntegerProperty();
+    private SimpleDoubleProperty popularity = new SimpleDoubleProperty();
     private SimpleStringProperty image = new SimpleStringProperty("");
 
     public Book(String genre, String name, String author, int year, int page, String path) {
@@ -105,11 +106,11 @@ public class Book implements Externalizable {
         this.year.set(year);
     }
 
-    public int getPopularity() {
+    public double getPopularity() {
         return popularity.get();
     }
 
-    public void setPopularity(int popularity) {
+    public void setPopularity(double popularity) {
         this.popularity.set(popularity);
     }
 
@@ -145,7 +146,7 @@ public class Book implements Externalizable {
         return image;
     }
 
-    public SimpleIntegerProperty popularityProperty() {
+    public SimpleDoubleProperty popularityProperty() {
         return popularity;
     }
 
